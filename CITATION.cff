@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this simulator in academic work, please cite it."
+title: "MAMN-MARL: Multi-Agent Mobile Network + MEC (RLlib PPO)"
+type: software
+authors:
+  - name: "<Your Name>"
+version: 0.1.0
+date-released: 2026-01-03
+license: MIT

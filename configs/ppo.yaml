@@ -1,0 +1,21 @@
+# PPO hyperparameters used by scripts/train_ppo.py
+
+gamma: 0.99
+lr: 0.00005
+lambda_: 0.95
+clip_param: 0.2
+vf_clip_param: 10.0
+train_batch_size: 1024
+use_gae: true
+
+sgd_minibatch_size: 256
+num_sgd_iter: 10
+
+# RLlib sampling
+num_env_runners: 1
+rollout_fragment_length: auto
+batch_mode: complete_episodes
+
+# Checkpoint and logging cadence
+log_every_iter: 1
+save_every_iter: 10

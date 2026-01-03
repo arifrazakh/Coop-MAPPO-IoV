@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Ray / RLlib outputs
+ray_results/
+**/ray_results/
+*.tfevents*
+
+# Logs / artifacts
+ppo_episode_metrics.csv
+*.log
+
+# Checkpoints (keep if you want; remove this line to track them)
+checkpoints/

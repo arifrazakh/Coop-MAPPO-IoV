@@ -1,0 +1,10 @@
+# Core
+numpy>=1.24
+gymnasium>=0.28
+matplotlib>=3.7
+
+# RLlib / Ray
+ray[rllib]>=2.8
+
+# Torch (used by RLlib when framework='torch')
+torch>=2.0
