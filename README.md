@@ -297,6 +297,253 @@ Coop-MAPPO-IoV-main/
 
 ---
 
+## Code Tour
+
+This repository is notebook-centered. The main logic is organized so that the proposed method, baselines, and scalability experiments can be reproduced from self-contained notebooks, while the `results/` and `graphs/` folders store the outputs used for analysis and paper-ready visualization.
+
+### 1. `scripts/ppo_multi.ipynb` — main Coop-MAPPO-IoV pipeline
+
+This is the core implementation notebook of the repository. It contains the full cooperative MA-PPO workflow for clustered IoV-VEC control, including environment design, PPO configuration, logging, training, and checkpointing.
+
+The notebook is organized conceptually as follows:
+
+```text
+Imports and library setup
+  -> NumPy, Matplotlib, Gymnasium
+  -> Ray / RLlib / Torch
+
+Basic PHY and helper functions
+  -> RX sensitivity
+  -> spectral efficiency from SINR
+  -> simple MIMO rank and SE calculation
+
+Environment building blocks
+  -> Channel
+  -> BaseStation
+  -> User
+
+Main multi-agent environment
+  -> MultiAgentMobileNetwork(MultiAgentEnv)
+  -> mobility, association, RB assignment, interference, queues, reward
+  -> local observations and global state construction
+
+RLlib callback utilities
+  -> EpisodeCSVLogger
+  -> episode-wise metric accumulation and CSV export
+
+Environment factory
+  -> rllib_env_creator()
+
+Training configuration and main loop
+  -> PPOConfig
+  -> shared-policy multi-agent setup
+  -> rollout / batch settings
+  -> checkpoint saving
+  -> console logging and step counting
+```
+
+<p align="justify">
+In practical terms, `ppo_multi.ipynb` is the notebook to open first if you want to understand how the full system works end to end. It moves from physical-layer abstractions, to BS-user environment dynamics, to cooperative PPO training under CLDE in one place.
+</p>
+
+### 2. PHY helpers and link abstractions
+
+At the beginning of the main notebook, helper functions define the lightweight radio model used by the environment. These include sensitivity estimation, Shannon-like spectral efficiency with an SNR gap, capped modulation efficiency, and a simplified MIMO gain abstraction.
+
+These helpers are important because they provide the bridge between continuous BS actions and measurable communication outcomes:
+
+```text
+transmit power fraction
+        -> per-channel power
+        -> SINR
+        -> spectral efficiency
+        -> served throughput
+```
+
+This keeps the learning interface compact while preserving the radio-compute coupling required by the paper.
+
+### 3. Environment entities: `Channel`, `BaseStation`, and `User`
+
+The notebook defines small building-block classes that represent the main objects manipulated by the simulator:
+
+- `Channel` for channel-level radio resources.
+- `BaseStation` for BS-side state and control.
+- `User` for vehicle-side demand, position, and service attributes.
+
+These abstractions keep the simulator readable by separating the physical objects from the higher-level control loop.
+
+### 4. `MultiAgentMobileNetwork` — the main simulator
+
+The main environment class implements the clustered IoV-VEC world as an RLlib-compatible multi-agent environment. This is where most of the actual system behavior lives.
+
+Key responsibilities include:
+
+```text
+- default BS placement
+- channel subset assignment
+- grid-road construction
+- Manhattan mobility initialization and movement
+- coverage and best-BS selection
+- on-demand channel activation
+- interference estimation
+- water-filling style power shaping
+- allocation and queue update
+- per-step reward and KPI computation
+- observation generation
+- rendering utilities
+```
+
+<p align="justify">
+In other words, this class turns the paper's cooperative MDP into an executable simulator. It is the most important part of the repository for readers who want to understand how mobility, interference, MEC queues, and BS-level control are connected in code.
+</p>
+
+### 5. Observation interface
+
+The observation is implemented as a compact normalized vector at the BS level. The notebook uses a fixed observation index layout so the policy sees a stable feature ordering across all BSs and all episodes.
+
+The observation groups include:
+
+```text
+- BS type and transmit status
+- channel and coverage utilization
+- local load and traffic demand summaries
+- nearby demand pressure
+- average speed and radial velocity
+- interference summary
+- MEC queue and CPU utilization
+- offloading ratio
+- served ratio and blocking fraction
+- channel-match quality
+- mandatory-offload summary
+- neighbor transmit activity
+```
+
+This design is consistent with the paper's goal of preserving scalability under dense deployments.
+
+### 6. `EpisodeCSVLogger` — metric tracing and reproducibility
+
+The callback class records scalar `info` fields during rollout and writes per-episode summaries to CSV. This is how the repository produces the experiment logs that later appear in `results/`.
+
+Its role is especially important for reproducibility:
+
+```text
+environment info fields
+        -> episode.user_data accumulation
+        -> per-episode mean metrics
+        -> ppo_episode_metrics.csv
+```
+
+The callback also exposes custom metrics back to RLlib so training summaries remain visible during optimization.
+
+### 7. `rllib_env_creator()` — RLlib environment registration
+
+This small wrapper makes the multi-agent environment available to RLlib. It is the connection point between the simulator class and the PPO training stack.
+
+Conceptually:
+
+```text
+MultiAgentMobileNetwork
+        -> env creator
+        -> RLlib registration
+        -> training config
+```
+
+### 8. PPO configuration and shared-policy CLDE training
+
+The bottom part of `ppo_multi.ipynb` builds the PPO learner with RLlib. This section defines the actual learning behavior of the proposed method.
+
+The configuration includes:
+
+```text
+- Torch backend
+- complete-episode batch collection
+- GAE and PPO clipping
+- shared multi-agent policy mapping
+- one shared policy for all BS agents
+- train batch size and SGD minibatches
+- normalization of continuous actions
+- callback attachment for CSV logging
+```
+
+The training loop then performs:
+
+```text
+train()
+  -> update total environment steps
+  -> print mean return and episode length
+  -> save checkpoints every fixed interval
+```
+
+This mirrors the CLDE logic described in the paper: local runtime action selection with centralized parameter updates from aggregated trajectories.
+
+### 9. Baseline notebooks
+
+The remaining notebooks under `scripts/` provide controlled comparisons against alternative decision strategies.
+
+```text
+a2c_multi.ipynb    -> cooperative / multi-agent A2C baseline
+sac_multi.ipynb    -> multi-agent SAC baseline
+ppo_cent.ipynb     -> centralized PPO baseline
+heuristic.ipynb    -> non-learning rule-based controller
+radio_only.ipynb   -> radio-only reference variant
+```
+
+These notebooks are useful when you want to compare algorithmic behavior under the same environment assumptions.
+
+### 10. `scripts/ppo_var_bs.ipynb` — scalability analysis
+
+This notebook isolates the effect of infrastructure density by changing the number of BSs while keeping the user population fixed. It is the notebook behind the scalability table and related discussion in the paper.
+
+The expected analysis path is:
+
+```text
+vary BS count
+    -> rerun cooperative PPO
+    -> export episode metrics
+    -> compare throughput, latency, and QoE trends
+```
+
+### 11. `results/` — raw experiment outputs
+
+The CSV files under `results/` are the main analysis artifacts of the repository. They contain episode-level metrics for the proposed method, learning baselines, ablations, and scalability runs.
+
+Typical usage:
+
+```text
+results/*.csv
+    -> load in pandas
+    -> compute steady-state means over the tail of training
+    -> compare baselines
+    -> produce paper figures
+```
+
+### 12. `graphs/` and `Figs/` — figures for explanation and reporting
+
+The repository separates conceptual diagrams from quantitative figures:
+
+- `Figs/` stores the architecture and CLDE workflow illustrations.
+- `graphs/` stores the generated result figures such as throughput, latency, fairness, QoE CDF, and radar summaries.
+
+This split is useful because it separates <b>how the system works</b> from <b>how the system performs</b>.
+
+### 13. Suggested reading order for new readers
+
+If you are opening the repository for the first time, the most efficient path is:
+
+```text
+1. Read README.md
+2. View Figs/architecture.png and Figs/clde.jpg
+3. Open scripts/ppo_multi.ipynb
+4. Inspect MultiAgentMobileNetwork and EpisodeCSVLogger
+5. Run scripts/ppo_multi.ipynb
+6. Compare with scripts/ppo_cent.ipynb, a2c_multi.ipynb, and sac_multi.ipynb
+7. Use results/*.csv and graphs/*.png for analysis
+```
+
+This reading order moves from concept, to implementation, to comparison, to final visualization.
+
+---
+
 ## Requirements
 
 The repository includes both `requirements.txt` and `pyproject.toml` for environment setup.
@@ -494,20 +741,7 @@ Together, these choices reduce blocking and tail-latency escalation while preser
 - `CITATION.cff` is included for repository citation support.
 - The notebook structure separates the proposed method, baseline methods, ablations, and scalability experiments for easier reproduction.
 
----
 
-## Citation
-
-If you use this repository, please cite the associated paper.
-
-```bibtex
-@article{raza2026joint,
-  title   = {Joint Radio-Compute Resource Management for Clustered Vehicular Edge Networks},
-  author  = {Raza, Arif and Borhan, Uddin Md. and Nasir, Anam and Chen, Jie and Wang, Lu},
-  journal = {IEEE Transactions on Intelligent Transportation Systems},
-  year    = {2026}
-}
-```
 
 ---
 
