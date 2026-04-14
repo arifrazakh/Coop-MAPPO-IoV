@@ -6,34 +6,34 @@
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/SUMO-Mobility%20Simulation-2E8B57" alt="SUMO">
   <img src="https://img.shields.io/badge/RLlib-Torch%20Backend-EE4C2C" alt="RLlib">
-  <img src="https://img.shields.io/badge/MARL-CLDE-6A1B9A" alt="MARL">
+  <img src="https://img.shields.io/badge/MARL-CTDE-6A1B9A" alt="MARL">
   <img src="https://img.shields.io/badge/Domain-IoV%20%2F%20VEC-0A66C2" alt="Domain">
   <img src="https://img.shields.io/badge/License-See%20LICENSE-green" alt="License">
 </p>
 
 > **Arif Raza, Uddin Md. Borhan, Anam Nasir, Jie Chen, and Lu Wang**  
-> College of Computer Science and Software Engineering, Shenzhen University  
-> Harbin Institute of Technology  
-> Corresponding author: wanglu@szu.edu.cn
+> College of Computer Science and Software Engineering, Shenzhen University, Shenzhen, China  
+> School of Computer Science and Technology, Harbin Institute of Technology, Harbin, China  
+> Corresponding authors: **Lu Wang** and **Jie Chen**
 
 ---
 
 ## Overview
 
 <p align="justify">
-This repository contains the implementation and evaluation assets for <b>joint radio-compute resource management in clustered vehicular edge networks</b>. The framework studies how clustered multi-cell base stations (BSs), each paired with a mobile edge computing (MEC) server, can cooperatively control <b>transmit power</b>, <b>resource-block activation</b>, <b>task offloading</b>, and <b>CPU allocation</b> under dynamic mobility, interference coupling, queue evolution, and heterogeneous intelligent transportation system (ITS) traffic.
+This repository contains the implementation and evaluation assets for <b>joint radio-compute resource management in clustered vehicular edge networks</b>. The framework studies how clustered multi-cell base stations (BSs), each paired with a mobile edge computing (MEC) server, can cooperatively control <b>transmit power</b>, <b>resource-block activation</b>, <b>task offloading</b>, and <b>CPU allocation</b> under dynamic mobility, interference coupling, MEC queue evolution, and heterogeneous intelligent transportation system (ITS) traffic.
 </p>
 
 <p align="justify">
-The core learning design is a <b>cooperative multi-agent proximal policy optimization</b> framework under <b>centralized learning and decentralized execution (CLDE)</b>. Each BS acts locally from a compact neighbor-aware observation, while a shared learner updates common actor-critic parameters using a shared quality-of-experience (QoE) oriented global reward. The repository also includes comparison results against <b>MAA2C</b>, <b>MA-SAC</b>, <b>centralized PPO</b>, a <b>heuristic controller</b>, and a <b>radio-only</b> reference, together with ready-made figures and CSV logs for reproducible analysis.
+The core learning design is a <b>cooperative multi-agent Proximal Policy Optimization (MA-PPO)</b> framework under <b>centralized training and decentralized execution (CTDE)</b>. Each BS executes a local policy from compact neighbor-aware observations, while a shared learner performs centralized actor-critic updates using a QoE-oriented global reward. The repository also includes comparison assets for <b>Cent-PPO</b>, <b>MA-A2C</b>, <b>MA-SAC</b>, a <b>heuristic controller</b>, and a <b>radio-only</b> reference, together with ready-made figures and CSV logs for reproducible analysis.
 </p>
 
 The framework addresses four tightly coupled challenges in clustered IoV-VEC control:
 
-1. <b>Unified radio-compute orchestration:</b> communication and computation are optimized jointly rather than as loosely coupled subproblems.
-2. <b>Cooperative BS-level learning:</b> each BS acts from local observations, but policies are coordinated through centralized training and a shared reward.
-3. <b>Scalable state and reward design:</b> compact neighbor-aware features and a normalized multi-objective QoE reward keep learning stable in dense deployments.
-4. <b>ITS-oriented evaluation:</b> the framework is validated under SUMO-driven urban, highway, and mixed mobility with heterogeneous traffic classes, deadline constraints, and scalability studies.
+1. <b>Unified radio-compute orchestration:</b> communication and computing are optimized jointly rather than as loosely coupled subproblems.
+2. <b>Cooperative BS-level learning:</b> each BS acts from a local observation, but policies are coordinated through centralized training and a shared reward.
+3. <b>Scalable state and reward design:</b> compact neighbor-aware summaries and a normalized multi-objective QoE reward keep learning stable in dense deployments.
+4. <b>ITS-oriented evaluation:</b> the framework is validated under SUMO-driven urban, highway, and mixed mobility regimes with heterogeneous traffic classes, deadline sensitivity, and scalability studies.
 
 ---
 
@@ -44,19 +44,19 @@ The framework addresses four tightly coupled challenges in clustered IoV-VEC con
 </p>
 
 <p align="justify">
-The system model couples clustered BSs, MEC queues, dynamic vehicle association, reuse-based interference, and delay-aware offloading into one closed-loop control problem. Each BS-MEC pair acts as an agent that serves vehicles within its coverage region while accounting for neighboring load, radio activity, and shared-spectrum interference.
+The system model couples clustered BSs, MEC queues, dynamic vehicle association, reuse-based interference, and delay-aware offloading into a single closed-loop control problem. Each BS-MEC pair acts as a cooperative agent serving vehicles in its coverage region while accounting for neighboring load, radio activity, and shared-spectrum interference.
 </p>
 
 ---
 
-## CLDE Learning Workflow
+## CTDE Learning Workflow
 
 <p align="center">
-  <img src="./Figs/clde.jpg" width="88%" alt="CLDE workflow for cooperative MA-PPO"/>
+  <img src="./Figs/clde.jpg" width="88%" alt="CTDE workflow for cooperative MA-PPO"/>
 </p>
 
 <p align="justify">
-During rollout, each BS observes only its own compact local state and samples a continuous action from the shared policy. The simulator then updates association, RB activation, interference, offloading workload, MEC service, and end-to-end delay, and returns a <b>shared global reward</b>. During training, trajectories from all BSs are aggregated and used by a shared PPO learner to update common actor and critic parameters. Runtime execution remains fully decentralized at the BS side.
+During rollout, each BS observes only its compact local state and samples a continuous action from the shared policy. The simulator then updates association, RB activation, interference, offloading workload, MEC service, and end-to-end delay, and returns a <b>global shared reward</b>. During training, trajectories from all BSs are aggregated and used by a shared PPO learner to update actor and critic parameters with policy, value, and entropy losses. Runtime execution remains fully decentralized at the BS side.
 </p>
 
 ---
@@ -68,17 +68,18 @@ SUMO mobility traces (urban / highway / mixed)
         |
         v
 Clustered IoV-VEC environment
-  Vehicles, BS coverage, MEC queues, traffic classes
+  Vehicles, BS coverage, MEC queues, task classes
   Reuse-based interference, RB activation, offloading, CPU service
         |
         v
 Local BS observation o_i(t)   [20 normalized features]
   - local radio utilization
-  - local MEC queue status
-  - served / blocked ratios
+  - local MEC backlog / CPU status
+  - served and blocked ratios
   - demand summaries
-  - mobility churn cues
+  - mobility cues
   - neighbor activity summaries
+  - mandatory-offload summary
         |
         v
 Shared cooperative actor  pi_theta(a_i | o_i)
@@ -89,30 +90,35 @@ Shared cooperative actor  pi_theta(a_i | o_i)
         v
 Environment transition
   Association update
-  Water-filling style power shaping
-  Rate / delay / queue evolution
-  QoE and deadline computation
+  Channel / RB assignment
+  Interference and water-filling-style power shaping
+  Rate, queue, delay, and QoE computation
         |
         v
 Shared global reward r_t
-  throughput + delay + deadline + QoE
-  - energy - blocking - unfairness
+  + throughput
+  + delay satisfaction
+  + deadline-related service quality
+  + QoE
+  - energy
+  - blocking
+  - unfairness
         |
         v
-Shared PPO learner under CLDE
+Shared PPO learner under CTDE
   Aggregated multi-BS trajectories
-  Policy loss + value loss + entropy regularization
+  PPO ratio clipping + value loss + entropy regularization
 ```
 
 ---
 
 ## Method Details
 
-This section summarizes how the main components of the framework are organized conceptually in the repository and in the accompanying paper.
+This section summarizes the main components of the framework and aligns them with the updated paper.
 
 ### 1. Cooperative MDP and BS Action Space
 
-The clustered vehicular edge network is modeled as a cooperative MDP in which each BS is an agent. At each control epoch, BS \(i\) selects a continuous action
+The clustered vehicular edge network is modeled as a cooperative Markov decision process in which each BS is an agent. At each control epoch, BS <i>i</i> selects a continuous action:
 
 ```text
 a_i(t) = [alpha_i(t), kappa_i(t), xi_i(t), phi_i(t)] in [0,1]^4
@@ -123,7 +129,7 @@ with the following meanings:
 ```text
 alpha_i(t)  -> transmit-power fraction
 kappa_i(t)  -> RB activation fraction
-xi_i(t)     -> offloading ratio
+xi_i(t)     -> task offloading fraction
 phi_i(t)    -> MEC CPU utilization fraction
 ```
 
@@ -135,39 +141,39 @@ K_i(t) = round(kappa_i(t) * K_i^max)
 F_i(t) = phi_i(t) * F_i^max
 ```
 
-This low-dimensional BS-level interface preserves tractability while still exposing the main control knobs needed for clustered radio-compute orchestration.
+This low-dimensional BS-level interface preserves tractability while still exposing the key control knobs needed for clustered radio-compute orchestration.
 
 ---
 
 ### 2. Joint Radio-Compute and QoE Modeling
 
-The environment couples radio service, MEC queue evolution, and user QoE in a single control loop.
+The environment couples radio service, MEC queue evolution, and user QoE in one control loop.
 
-**Radio layer.** Each BS activates a subset of RBs and distributes power over active RBs under a total power budget. Inter-cell interference is modeled through reuse-based coupling across neighboring BSs. Achievable rate is derived from an SINR-based link model with protocol overhead and capped spectral efficiency.
+**Radio layer.** Each BS activates a subset of RBs and distributes power over active RBs under a total power budget. Inter-cell interference is modeled through reuse-based coupling across neighboring BSs. Achievable rate is derived from an SINR-driven link model with protocol overhead, SNR-gap modeling, and capped spectral efficiency.
 
-**Association.** Vehicles are dynamically associated to the BS that best balances link quality and current load. If a user cannot be served after association, it contributes to the blocking term.
+**Association.** Vehicles are associated to the BS that balances link quality and current load. Users that cannot be served after association contribute to the blocking term.
 
-**Compute layer.** The BS action determines the fraction of demand that is offloaded to the MEC server. Offloaded tasks are translated into workload arrivals, which update the MEC backlog according to
+**Compute layer.** The BS action determines how much demand is offloaded to the MEC server. Offloaded tasks become workload arrivals that update the MEC backlog:
 
 ```text
 q_i(t+1) = max{ q_i(t) - F_i(t) * Delta, 0 } + lambda_i(t)
 ```
 
-**End-to-end delay.** Total delay is the sum of radio-side delay and MEC delay:
+**End-to-end delay.** Total latency is the sum of radio-side delay and MEC delay:
 
 ```text
 T_u(t) = T_u^r(t) + T_u^m(t)
 ```
 
-**User QoE.** QoE jointly reflects throughput fulfillment and delay satisfaction, instead of optimizing one metric in isolation.
+**User QoE.** QoE jointly reflects throughput fulfillment and delay satisfaction instead of optimizing one metric in isolation.
 
-This joint formulation is the main reason the method can reduce queue buildup and tail-latency escalation while preserving throughput.
+This joint formulation is central to the framework because it reduces queue buildup and tail-latency escalation while preserving a strong throughput operating point.
 
 ---
 
-### 3. Cooperative MA-PPO Under CLDE
+### 3. Cooperative MA-PPO Under CTDE
 
-A single stochastic actor and a shared critic are used across all BSs. During execution, each BS performs a local forward pass only:
+A single stochastic actor and a shared critic are used across all BSs. During execution, each BS performs only a local forward pass:
 
 ```text
 a_i(t) ~ pi_theta(. | o_i(t))
@@ -179,26 +185,27 @@ During training, trajectories from all BSs are aggregated into a shared rollout 
 - clipped policy objective
 - value regression loss
 - entropy regularization
+- rollout minibatch updates
 ```
 
-The design preserves two desirable properties simultaneously:
+The design preserves two useful properties at the same time:
 
-1. <b>Cooperation</b>, because all BSs learn from a shared reward and shared parameters.
-2. <b>Scalability</b>, because runtime execution does not require centralized online decision making.
+1. <b>Cooperation</b>, because all BSs learn from a global reward and shared parameters.
+2. <b>Scalability</b>, because runtime execution remains decentralized and requires only local observations.
 
-This is the central learning mechanism behind the proposed Coop-MAPPO-IoV framework.
+This is the central learning mechanism of the proposed Coop-MAPPO-IoV framework.
 
 ---
 
 ### 4. Scalable Observation and Reward Design
 
-Each BS receives a compact 20-dimensional observation that summarizes the most relevant local and neighborhood signals without exploding with the number of vehicles. The observation includes normalized descriptors of:
+Each BS receives a compact 20-dimensional observation that summarizes the most relevant local and neighborhood signals without growing with the number of vehicles. The observation includes normalized descriptors of:
 
 ```text
 - power, RB, and CPU utilization
-- MEC backlog level
+- MEC queue level
 - demand and served-load summaries
-- blocking and churn indicators
+- blocked-user and mobility cues
 - neighboring RB use and transmit activity
 - mandatory-offload summary
 ```
@@ -208,14 +215,14 @@ The shared reward is a normalized multi-objective QoE score of the form:
 ```text
 reward = + throughput
          + delay satisfaction
-         + deadline satisfaction
+         + deadline-related score
          + average QoE
          - energy cost
          - blocking
          - unfairness
 ```
 
-The reward is clipped to a bounded interval so that on-policy PPO updates remain numerically stable even when traffic conditions become bursty or heavily congested.
+The reward is clipped to a bounded interval so that on-policy PPO updates remain numerically stable under bursty traffic and congested network states.
 
 ---
 
@@ -227,7 +234,7 @@ The evaluation protocol is designed to reflect deployment-oriented ITS condition
 
 ```text
 omega_u : urban grid with stop-and-go traffic and turning events
-omega_h : highway traffic with high-speed flow and transient coverage changes
+omega_h : highway traffic with higher-speed flow and transient coverage changes
 omega_m : mixed regime combining both conditions
 ```
 
@@ -245,7 +252,7 @@ omega_m : mixed regime combining both conditions
 - throughput
 - average latency
 - P95 latency
-- deadline satisfaction
+- deadline-related score / satisfaction behavior
 - QoE
 - energy efficiency
 - Jain's fairness index
@@ -256,6 +263,35 @@ This evaluation logic enables direct comparison between the proposed method and 
 
 ---
 
+## Simulation Setup
+
+The validation platform couples mobility generation, radio resource allocation, MEC queue evolution, heterogeneous task arrivals, and policy learning in a unified discrete-time simulator.
+
+```text
+Decision interval             : 1 s
+Episode length                : 200 control epochs
+Default deployment            : 4 macro BSs, 80 vehicles, 2 km x 2 km
+BS height                     : 30 m
+Channels per carrier          : 50
+Channel bandwidth             : 180 kHz
+Maximum BS transmit power     : 40 W
+Carrier set                   : {3.4, 3.5, 3.6, 3.7} GHz
+Receiver noise figure         : 7 dB
+SNR-gap parameter             : 1.5 dB
+Maximum spectral efficiency   : 7.5 bit/s/Hz
+MIMO abstraction              : rank up to 4 for macro BSs
+MEC capacity per BS           : 50 x 10^9 cycles/s
+Workload intensity            : 5 x 10^7 cycles/Mbit
+CPU energy coefficient        : 10^-27
+Latency target                : 100 ms
+Traffic mix                   : 30% safety, 70% infotainment
+Demand refresh probability    : 0.05 per user per epoch
+```
+
+Heavy tasks are generated with probability 0.70 and are treated as mandatory-offloading tasks when they exceed the UE local compute budget. Light tasks may be processed locally or offloaded depending on the BS action.
+
+---
+
 ## Repository Layout
 
 ```text
@@ -263,7 +299,7 @@ Coop-MAPPO-IoV-main/
 ├── CITATION.cff
 ├── Figs
 │   ├── architecture.png            <- clustered IoV-VEC framework overview
-│   └── clde.jpg                    <- centralized learning / decentralized execution workflow
+│   └── clde.jpg                    <- CTDE learning workflow illustration
 ├── graphs
 │   ├── fairness_vs_load.png        <- Jain's fairness across offered-load bins
 │   ├── latency_mean_tail_single_scale.png
@@ -276,22 +312,22 @@ Coop-MAPPO-IoV-main/
 ├── README.md
 ├── requirements.txt
 ├── results
-│   ├── a2c_episode_metrics.csv     <- MAA2C episode-level metrics
+│   ├── a2c_episode_metrics.csv     <- MA-A2C episode-level metrics
 │   ├── heuristic_episode_metrics.csv
 │   ├── ppo_central_episode_metrics.csv
-│   ├── ppo_episode_metrics.csv     <- proposed cooperative PPO metrics
+│   ├── ppo_episode_metrics.csv     <- proposed cooperative MA-PPO metrics
 │   ├── ppo_with_4_BS.csv           <- scalability study with 4 BSs
 │   ├── ppo_with_6_BS.csv           <- scalability study with 6 BSs
 │   ├── ppo_with_8_BS.csv           <- scalability study with 8 BSs
 │   ├── radio_only.csv              <- radio-only reference variant
 │   └── sac_episode_metrics.csv     <- MA-SAC episode-level metrics
 └── scripts
-    ├── a2c_multi.ipynb             <- MAA2C baseline notebook
-    ├── heuristic.ipynb             <- heuristic resource-control notebook
+    ├── a2c_multi.ipynb             <- MA-A2C baseline notebook
+    ├── heuristic.ipynb             <- heuristic controller notebook
     ├── ppo_cent.ipynb              <- centralized PPO baseline notebook
     ├── ppo_multi.ipynb             <- proposed cooperative MA-PPO notebook
-    ├── ppo_var_bs.ipynb            <- scalability study with varying BS counts
-    ├── radio_only.ipynb            <- radio-only ablation notebook
+    ├── ppo_var_bs.ipynb            <- BS-density scalability study
+    ├── radio_only.ipynb            <- radio-only diagnostic notebook
     └── sac_multi.ipynb             <- MA-SAC baseline notebook
 ```
 
@@ -303,244 +339,140 @@ This repository is notebook-centered. The main logic is organized so that the pr
 
 ### 1. `scripts/ppo_multi.ipynb` — main Coop-MAPPO-IoV pipeline
 
-This is the core implementation notebook of the repository. It contains the full cooperative MA-PPO workflow for clustered IoV-VEC control, including environment design, PPO configuration, logging, training, and checkpointing.
+This is the main implementation notebook. It contains the full cooperative MA-PPO workflow for clustered IoV-VEC control, including environment design, PPO configuration, logging, training, and output generation.
 
 The notebook is organized conceptually as follows:
 
 ```text
 Imports and library setup
-  -> NumPy, Matplotlib, Gymnasium
-  -> Ray / RLlib / Torch
+  -> Gymnasium, NumPy, Matplotlib
+  -> Ray RLlib, Torch
 
 Basic PHY and helper functions
-  -> RX sensitivity
-  -> spectral efficiency from SINR
-  -> simple MIMO rank and SE calculation
+  -> rx_sensitivity_dBm()
+  -> spectral_efficiency_from_sinr()
+  -> mimo_rank_and_total_se()
 
 Environment building blocks
   -> Channel
   -> BaseStation
   -> User
 
-Main multi-agent environment
+Main multi-agent simulator
   -> MultiAgentMobileNetwork(MultiAgentEnv)
-  -> mobility, association, RB assignment, interference, queues, reward
-  -> local observations and global state construction
+  -> mobility, association, RB assignment, interference
+  -> MEC queues, reward, observation construction
 
-RLlib callback utilities
-  -> EpisodeCSVLogger
+Callbacks and logging
+  -> EpisodeCSVLogger(DefaultCallbacks)
   -> episode-wise metric accumulation and CSV export
 
-Environment factory
+RLlib integration
   -> rllib_env_creator()
-
-Training configuration and main loop
-  -> PPOConfig
   -> shared-policy multi-agent setup
-  -> rollout / batch settings
-  -> checkpoint saving
-  -> console logging and step counting
+  -> PPOConfig and training loop
 ```
 
 <p align="justify">
-In practical terms, `ppo_multi.ipynb` is the notebook to open first if you want to understand how the full system works end to end. It moves from physical-layer abstractions, to BS-user environment dynamics, to cooperative PPO training under CLDE in one place.
+If you want to understand the full system end to end, start with `ppo_multi.ipynb`. It goes from radio and compute abstractions, to BS-user environment dynamics, to cooperative PPO training under CTDE in one place.
 </p>
 
 ### 2. PHY helpers and link abstractions
 
-At the beginning of the main notebook, helper functions define the lightweight radio model used by the environment. These include sensitivity estimation, Shannon-like spectral efficiency with an SNR gap, capped modulation efficiency, and a simplified MIMO gain abstraction.
+At the beginning of the main notebook, helper functions define the lightweight radio model used by the environment. These include thermal-noise-based sensitivity, Shannon-like spectral efficiency with an SNR gap, capped modulation efficiency, and a simplified MIMO rank abstraction.
 
-These helpers are important because they provide the bridge between continuous BS actions and measurable communication outcomes:
+These helpers bridge continuous BS actions to measurable communication outcomes:
 
 ```text
-transmit power fraction
-        -> per-channel power
-        -> SINR
-        -> spectral efficiency
-        -> served throughput
+power fraction
+   -> per-channel power
+   -> SINR
+   -> spectral efficiency
+   -> achievable throughput
 ```
 
 This keeps the learning interface compact while preserving the radio-compute coupling required by the paper.
 
 ### 3. Environment entities: `Channel`, `BaseStation`, and `User`
 
-The notebook defines small building-block classes that represent the main objects manipulated by the simulator:
+The main notebook defines three building-block classes used throughout the simulator:
 
-- `Channel` for channel-level radio resources.
-- `BaseStation` for BS-side state and control.
-- `User` for vehicle-side demand, position, and service attributes.
+- `Channel` stores channel frequency, bandwidth, noise figure, and user occupancy.
+- `BaseStation` stores BS-side radio and MEC state, coverage behavior, power mapping, and channel assignment.
+- `User` stores vehicle location, velocity, service class, demand, task type, input-data size, and channel-specific link state.
 
-These abstractions keep the simulator readable by separating the physical objects from the higher-level control loop.
+These abstractions keep the simulator readable by separating physical objects from the higher-level control loop.
 
 ### 4. `MultiAgentMobileNetwork` — the main simulator
 
-The main environment class implements the clustered IoV-VEC world as an RLlib-compatible multi-agent environment. This is where most of the actual system behavior lives.
+This is the main environment class and the core of the repository. It implements the clustered IoV-VEC world as an RLlib-compatible multi-agent environment.
 
 Key responsibilities include:
 
 ```text
-- default BS placement
+- BS placement and topology initialization
 - channel subset assignment
-- grid-road construction
-- Manhattan mobility initialization and movement
-- coverage and best-BS selection
+- mobility initialization and updates
+- best-BS association under coverage and load
 - on-demand channel activation
 - interference estimation
-- water-filling style power shaping
-- allocation and queue update
-- per-step reward and KPI computation
-- observation generation
-- rendering utilities
+- rate calculation with lightweight MIMO abstraction
+- task generation and mandatory-offload logic
+- MEC queue updates and CPU service
+- local 20-D observation construction
+- global shared reward computation
+- per-step KPI logging
 ```
 
-<p align="justify">
-In other words, this class turns the paper's cooperative MDP into an executable simulator. It is the most important part of the repository for readers who want to understand how mobility, interference, MEC queues, and BS-level control are connected in code.
-</p>
+In practical terms, this class is where the paper's MDP, queue model, radio-compute coupling, and reward design become executable.
 
-### 5. Observation interface
+### 5. `EpisodeCSVLogger` — experiment logging
 
-The observation is implemented as a compact normalized vector at the BS level. The notebook uses a fixed observation index layout so the policy sees a stable feature ordering across all BSs and all episodes.
+`EpisodeCSVLogger` collects per-step scalar metrics over an episode and writes episode-wise summaries to CSV. In the PPO notebook, it appends rows to `ppo_episode_metrics.csv`, which later feed the result tables and figures.
 
-The observation groups include:
+This logger is important because it keeps the training loop clean while still exporting the metrics used for:
 
 ```text
-- BS type and transmit status
-- channel and coverage utilization
-- local load and traffic demand summaries
-- nearby demand pressure
-- average speed and radial velocity
-- interference summary
-- MEC queue and CPU utilization
-- offloading ratio
-- served ratio and blocking fraction
-- channel-match quality
-- mandatory-offload summary
-- neighbor transmit activity
+- throughput comparison
+- latency comparison
+- QoE analysis
+- fairness analysis
+- reward and return tracking
 ```
 
-This design is consistent with the paper's goal of preserving scalability under dense deployments.
+### 6. RLlib integration and PPO configuration
 
-### 6. `EpisodeCSVLogger` — metric tracing and reproducibility
+The notebook uses RLlib with a shared-policy multi-agent setup. A single policy is mapped to all BS agents, which directly implements the paper's CTDE idea.
 
-The callback class records scalar `info` fields during rollout and writes per-episode summaries to CSV. This is how the repository produces the experiment logs that later appear in `results/`.
-
-Its role is especially important for reproducibility:
+The PPO block configures the learner with parameters such as:
 
 ```text
-environment info fields
-        -> episode.user_data accumulation
-        -> per-episode mean metrics
-        -> ppo_episode_metrics.csv
+- gamma = 0.99
+- lr = 5e-5
+- lambda = 0.95
+- clip_param = 0.2
+- train_batch_size = 1024
+- sgd_minibatch_size = 256
+- num_sgd_iter = 10
+- batch_mode = complete_episodes
 ```
 
-The callback also exposes custom metrics back to RLlib so training summaries remain visible during optimization.
+The shared-policy configuration is one of the most important parts of the repository because it operationalizes cooperative BS-level learning with centralized updates and decentralized runtime actions.
 
-### 7. `rllib_env_creator()` — RLlib environment registration
+### 7. Baseline notebooks
 
-This small wrapper makes the multi-agent environment available to RLlib. It is the connection point between the simulator class and the PPO training stack.
-
-Conceptually:
+The remaining notebooks follow the same overall environment logic but swap out the learning rule or control strategy:
 
 ```text
-MultiAgentMobileNetwork
-        -> env creator
-        -> RLlib registration
-        -> training config
+scripts/ppo_cent.ipynb   -> centralized PPO reference
+scripts/a2c_multi.ipynb  -> MA-A2C baseline
+scripts/sac_multi.ipynb  -> MA-SAC baseline
+scripts/heuristic.ipynb  -> rule-based controller
+scripts/radio_only.ipynb -> communication-only diagnostic baseline
+scripts/ppo_var_bs.ipynb -> scalability study for 4 / 6 / 8 BS settings
 ```
 
-### 8. PPO configuration and shared-policy CLDE training
-
-The bottom part of `ppo_multi.ipynb` builds the PPO learner with RLlib. This section defines the actual learning behavior of the proposed method.
-
-The configuration includes:
-
-```text
-- Torch backend
-- complete-episode batch collection
-- GAE and PPO clipping
-- shared multi-agent policy mapping
-- one shared policy for all BS agents
-- train batch size and SGD minibatches
-- normalization of continuous actions
-- callback attachment for CSV logging
-```
-
-The training loop then performs:
-
-```text
-train()
-  -> update total environment steps
-  -> print mean return and episode length
-  -> save checkpoints every fixed interval
-```
-
-This mirrors the CLDE logic described in the paper: local runtime action selection with centralized parameter updates from aggregated trajectories.
-
-### 9. Baseline notebooks
-
-The remaining notebooks under `scripts/` provide controlled comparisons against alternative decision strategies.
-
-```text
-a2c_multi.ipynb    -> cooperative / multi-agent A2C baseline
-sac_multi.ipynb    -> multi-agent SAC baseline
-ppo_cent.ipynb     -> centralized PPO baseline
-heuristic.ipynb    -> non-learning rule-based controller
-radio_only.ipynb   -> radio-only reference variant
-```
-
-These notebooks are useful when you want to compare algorithmic behavior under the same environment assumptions.
-
-### 10. `scripts/ppo_var_bs.ipynb` — scalability analysis
-
-This notebook isolates the effect of infrastructure density by changing the number of BSs while keeping the user population fixed. It is the notebook behind the scalability table and related discussion in the paper.
-
-The expected analysis path is:
-
-```text
-vary BS count
-    -> rerun cooperative PPO
-    -> export episode metrics
-    -> compare throughput, latency, and QoE trends
-```
-
-### 11. `results/` — raw experiment outputs
-
-The CSV files under `results/` are the main analysis artifacts of the repository. They contain episode-level metrics for the proposed method, learning baselines, ablations, and scalability runs.
-
-Typical usage:
-
-```text
-results/*.csv
-    -> load in pandas
-    -> compute steady-state means over the tail of training
-    -> compare baselines
-    -> produce paper figures
-```
-
-### 12. `graphs/` and `Figs/` — figures for explanation and reporting
-
-The repository separates conceptual diagrams from quantitative figures:
-
-- `Figs/` stores the architecture and CLDE workflow illustrations.
-- `graphs/` stores the generated result figures such as throughput, latency, fairness, QoE CDF, and radar summaries.
-
-This split is useful because it separates <b>how the system works</b> from <b>how the system performs</b>.
-
-### 13. Suggested reading order for new readers
-
-If you are opening the repository for the first time, the most efficient path is:
-
-```text
-1. Read README.md
-2. View Figs/architecture.png and Figs/clde.jpg
-3. Open scripts/ppo_multi.ipynb
-4. Inspect MultiAgentMobileNetwork and EpisodeCSVLogger
-5. Run scripts/ppo_multi.ipynb
-6. Compare with scripts/ppo_cent.ipynb, a2c_multi.ipynb, and sac_multi.ipynb
-7. Use results/*.csv and graphs/*.png for analysis
-```
-
-This reading order moves from concept, to implementation, to comparison, to final visualization.
+This separation makes it easier to reproduce comparisons method by method while keeping the evaluation pipeline consistent.
 
 ---
 
@@ -553,9 +485,10 @@ Typical dependencies include:
 - Python 3.x
 - Jupyter / IPython for notebook execution
 - PyTorch
-- RLlib with Torch backend
+- Ray RLlib with Torch backend
 - NumPy / Pandas
 - Matplotlib
+- Gymnasium
 - SUMO-related preprocessing or trace-generation dependencies, depending on the workflow
 
 A standard setup is:
@@ -607,11 +540,11 @@ This notebook contains the main cooperative MA-PPO training and evaluation pipel
 For baseline experiments, use the following notebooks:
 
 ```text
-scripts/ppo_cent.ipynb    -> centralized PPO
-scripts/a2c_multi.ipynb   -> multi-agent A2C
-scripts/sac_multi.ipynb   -> multi-agent SAC
-scripts/heuristic.ipynb   -> heuristic controller
-scripts/radio_only.ipynb  -> radio-only reference
+scripts/ppo_cent.ipynb   -> centralized PPO
+scripts/a2c_multi.ipynb  -> MA-A2C
+scripts/sac_multi.ipynb  -> MA-SAC
+scripts/heuristic.ipynb  -> heuristic controller
+scripts/radio_only.ipynb -> radio-only diagnostic baseline
 ```
 
 ### 4. Run the scalability study
@@ -631,7 +564,7 @@ Key experiment outputs are stored in:
 ```text
 results/   -> episode-level CSV metrics
 graphs/    -> ready-made publication figures
-Figs/      -> architecture and CLDE illustrations
+Figs/      -> architecture and CTDE illustrations
 ```
 
 ---
@@ -642,10 +575,10 @@ Figs/      -> architecture and CLDE illustrations
 |---|---|
 | `scripts/ppo_multi.ipynb` | Proposed cooperative MA-PPO / Coop-MAPPO-IoV training and evaluation |
 | `scripts/ppo_cent.ipynb` | Centralized PPO baseline |
-| `scripts/a2c_multi.ipynb` | Multi-agent A2C baseline |
-| `scripts/sac_multi.ipynb` | Multi-agent SAC baseline |
+| `scripts/a2c_multi.ipynb` | MA-A2C baseline |
+| `scripts/sac_multi.ipynb` | MA-SAC baseline |
 | `scripts/heuristic.ipynb` | Heuristic controller for reference comparison |
-| `scripts/radio_only.ipynb` | Radio-only variant for component analysis |
+| `scripts/radio_only.ipynb` | Radio-only diagnostic baseline |
 | `scripts/ppo_var_bs.ipynb` | Scalability analysis under different BS counts |
 
 ---
@@ -673,11 +606,11 @@ Figs/      -> architecture and CLDE illustrations
 </p>
 
 <p align="justify">
-<b>Left: Normalized radar summary.</b> The figure compares throughput, deadline satisfaction, QoE, fairness, low-energy behavior, and low-blocking performance in one view. The proposed method dominates most axes simultaneously, confirming that the reward does not collapse to a single objective.
+<b>Left: Normalized radar summary.</b> The figure compares throughput, deadline-related service quality, QoE, fairness, low-energy behavior, and low-blocking performance in one view. The proposed method dominates most axes simultaneously, confirming that the reward does not collapse to a single objective.
 </p>
 
 <p align="justify">
-<b>Right: QoE CDF.</b> The per-user QoE distribution of the proposed method is shifted furthest to the right, indicating more users receive higher average service quality.
+<b>Right: QoE CDF.</b> The per-user QoE distribution of the proposed method is shifted furthest to the right, indicating that more users receive higher average service quality.
 </p>
 
 <p align="center">
@@ -694,20 +627,20 @@ Figs/      -> architecture and CLDE illustrations
 
 Steady-state comparison of the learning baselines:
 
-| Algorithm | Throughput (Mbps) | Mean Latency (ms) | P95 Latency (ms) | Ep. Return | Global Reward | QoE | Block (%) | Fairness |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| **Ours** | **115.9** | **562.5** | **1164.0** | **26.16** | **0.131** | **0.378** | **0.51** | 0.971 |
-| Cent-PPO | 115.6 | 1733.0 | 4217.0 | 17.20 | 0.086 | 0.331 | 3.09 | **0.972** |
-| MAA2C | 58.6 | 1315.1 | 2575.0 | -31.34 | -0.157 | 0.120 | 56.76 | 0.515 |
-| MA-SAC | 22.6 | 1104.8 | 1713.4 | -50.80 | -0.254 | 0.049 | 81.80 | 0.348 |
+| Algorithm | Throughput (Mbps) | Mean Latency (ms) | P95 Latency (ms) | Ep. Return | Global Reward | Deadline Score | QoE | Block (%) | Fairness |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **Ours** | **115.9** | **562.5** | **1164.0** | **26.16** | **0.131** | **11.30** | **0.378** | **0.51** | 0.971 |
+| Cent-PPO | 115.6 | 1733.0 | 4217.0 | 17.20 | 0.086 | 5.23 | 0.331 | 3.09 | **0.972** |
+| MA-A2C | 58.6 | 1315.1 | 2575.0 | -31.34 | -0.157 | 1.05 | 0.120 | 56.76 | 0.515 |
+| MA-SAC | 22.6 | 1104.8 | 1713.4 | -50.80 | -0.254 | 0.59 | 0.049 | 81.80 | 0.348 |
 
-Class-aware QoE and deadline comparison:
+Class-aware comparison under the current safety / infotainment traffic mix:
 
-| Algorithm | Safety Deadline | Safety QoE | Infotainment Deadline | Infotainment QoE |
+| Algorithm | Safety Deadline Score | Safety QoE | Infotainment Deadline Score | Infotainment QoE |
 |---|---:|---:|---:|---:|
 | **Ours** | **11.24** | **0.529** | **11.33** | **0.313** |
 | Cent-PPO | 5.22 | 0.482 | 5.25 | 0.267 |
-| MAA2C | 1.05 | 0.184 | 1.05 | 0.093 |
+| MA-A2C | 1.05 | 0.184 | 1.05 | 0.093 |
 | MA-SAC | 0.60 | 0.074 | 0.58 | 0.039 |
 
 Scalability of the proposed method with increasing BS density:
@@ -718,7 +651,22 @@ Scalability of the proposed method with increasing BS density:
 | 6 | 140.88 ± 9.30 | 441.17 ± 15.42 | 1002.10 ± 12.64 | 0.457 ± 0.019 |
 | 8 | **177.59 ± 8.20** | **318.12 ± 10.84** | **764.85 ± 69.54** | **0.576 ± 0.016** |
 
-These results show that the cooperative BS-level PPO design improves throughput, latency, QoE, and deadline behavior jointly, while remaining stable as infrastructure density increases.
+These results show that the cooperative BS-level PPO design improves throughput, latency, QoE, deadline-related behavior, and scalability jointly, while preserving strong fairness under dense traffic.
+
+---
+
+## Reference-Based Component View
+
+The repository includes several meaningful reference variants that help interpret the role of each major framework component.
+
+| Variant | Learning | Joint Radio-Compute | Role |
+|---|---|---|---|
+| Cent-PPO | Yes | Yes | Centralized policy reference |
+| Heuristic | No | Yes | Rule-based reference |
+| Radio-only | No / Partial | No | Communication-only diagnostic |
+| Ours | Yes | Yes | Full proposed framework |
+
+This view clarifies that the repository is not only a training implementation, but also a controlled comparison framework for analyzing decentralized cooperative learning and joint radio-compute control.
 
 ---
 
@@ -726,9 +674,9 @@ These results show that the cooperative BS-level PPO design improves throughput,
 
 The empirical profile of the repository can be understood through three design decisions:
 
-1. <b>Joint radio-compute control</b> prevents the policy from optimizing bandwidth or offloading in isolation.
-2. <b>Shared-policy CLDE learning</b> enables cooperation across BSs without requiring centralized runtime inference.
-3. <b>Compact neighbor-aware state plus normalized reward</b> preserves scalability and fairness under dense traffic and bursty demand.
+1. <b>Joint radio-compute control</b> prevents the policy from optimizing bandwidth and offloading in isolation.
+2. <b>Shared-policy CTDE learning</b> enables cooperation across BSs without requiring centralized runtime inference.
+3. <b>Compact neighbor-aware state plus normalized reward</b> preserves scalability, fairness, and service quality under dense traffic and bursty demand.
 
 Together, these choices reduce blocking and tail-latency escalation while preserving a strong throughput operating point.
 
@@ -737,9 +685,10 @@ Together, these choices reduce blocking and tail-latency escalation while preser
 ## Reproducibility Notes
 
 - All major comparisons are backed by CSV logs under `results/`.
-- The repository already includes the final publication-style graphs under `graphs/`.
+- The repository already includes final publication-style figures under `graphs/`.
 - `CITATION.cff` is included for repository citation support.
-- The notebook structure separates the proposed method, baseline methods, ablations, and scalability experiments for easier reproduction.
+- The notebook structure separates the proposed method, baseline methods, and scalability experiments for easier reproduction.
+- After training, each BS requires only a single forward pass of the shared policy per control epoch, while the remaining computation is local scheduling, queue updates, and power shaping.
 
 
 
