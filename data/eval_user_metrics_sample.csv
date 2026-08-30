@@ -1,0 +1,9 @@
+run_id,method,variant,scenario,seed,experiment,num_bs,num_users,user_id,mean_qoe,mean_latency_ms
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,0,0.7619834544731522,143.9034698132844
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,1,0.7451181344460738,143.46499047434438
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,2,0.7653819512252896,146.86839038736886
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,3,0.7402972751251498,151.57212263309606
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,4,0.738942106593645,147.56222142198231
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,5,0.717006603708105,160.29130653099995
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,6,0.747879325064395,157.08825300204614
+cent_ppo__full__urban__bs4__u80__main__seed42,cent_ppo,full,urban,42,main,4,80,7,0.7789615865483644,144.50614087984795
