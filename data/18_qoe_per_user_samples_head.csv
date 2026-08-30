@@ -1,0 +1,9 @@
+algorithm,method,seed,user_id,mean_qoe
+Cent-PPO,cent_ppo,42,0,0.7619834544731522
+Cent-PPO,cent_ppo,42,1,0.7451181344460738
+Cent-PPO,cent_ppo,42,2,0.7653819512252896
+Cent-PPO,cent_ppo,42,3,0.7402972751251498
+Cent-PPO,cent_ppo,42,4,0.738942106593645
+Cent-PPO,cent_ppo,42,5,0.717006603708105
+Cent-PPO,cent_ppo,42,6,0.747879325064395
+Cent-PPO,cent_ppo,42,7,0.7789615865483644

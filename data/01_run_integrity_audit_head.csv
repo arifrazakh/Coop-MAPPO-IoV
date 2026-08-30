@@ -1,0 +1,9 @@
+run_id,algorithm,method,seed,experiment,scenario,num_bs,num_users,training_env_steps,training_iterations,summary_num_eval_episodes,eval_episode_rows,eval_episode_unique,first_eval_episode,last_eval_episode,first_eval_seed,last_eval_seed,eval_steps_rows,config_exists,status,notes
+ours__no_neighbor__urban__bs4__u80__ablation__seed42,Ours,ours,42,ablation,urban,4,80,200000,200,20,20,20,0,19,,,4000,True,PASS,
+ours__no_neighbor__urban__bs4__u80__ablation__seed43,Ours,ours,43,ablation,urban,4,80,200000,200,20,20,20,0,19,,,4000,True,PASS,
+ours__no_neighbor__urban__bs4__u80__ablation__seed44,Ours,ours,44,ablation,urban,4,80,200000,200,20,20,20,0,19,,,4000,True,PASS,
+ours__full__urban__bs8__u160__bs_scale__seed42,Ours,ours,42,bs_scale,urban,8,160,200000,200,20,20,20,0,19,,,4000,True,PASS,
+ours__full__urban__bs8__u160__bs_scale__seed43,Ours,ours,43,bs_scale,urban,8,160,200000,200,20,20,20,0,19,,,4000,True,PASS,
+ours__full__urban__bs8__u160__bs_scale__seed44,Ours,ours,44,bs_scale,urban,8,160,200000,200,20,20,20,0,19,,,4000,True,PASS,
+cent_ppo__full__urban__bs4__u80__main__seed42,Cent-PPO,cent_ppo,42,main,urban,4,80,200000,200,20,20,20,0,19,,,4000,True,PASS,
+cent_ppo__full__urban__bs4__u80__main__seed43,Cent-PPO,cent_ppo,43,main,urban,4,80,200000,200,20,20,20,0,19,,,4000,True,PASS,

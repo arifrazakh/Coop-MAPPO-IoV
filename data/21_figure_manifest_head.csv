@@ -1,0 +1,9 @@
+figure,source_table,interpretation
+01_main_throughput,03_main_cross_seed_summary.csv,"Main four-method throughput, mean ± sample SD."
+02_main_latency_mean_p95,03_main_cross_seed_summary.csv,Main mean and P95 latency.
+03_deadline_overall_light_heavy,06_deadline_overall_light_heavy.csv,"Overall, light, and heavy deadline satisfaction reconstructed from raw user steps."
+04_main_qoe,03_main_cross_seed_summary.csv,Main average QoE.
+05_main_fairness,03_main_cross_seed_summary.csv,Main Jain fairness.
+06_main_energy,03_main_cross_seed_summary.csv,Modeled comparative energy per step.
+07_qoe_cdf,18_qoe_per_user_samples.csv,Per-user mean QoE CDF.
+08_deadline_by_service_class,09_service_class_cross_seed_summary.csv,Safety vs infotainment deadline satisfaction.
