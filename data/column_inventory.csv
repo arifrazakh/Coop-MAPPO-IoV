@@ -1,0 +1,573 @@
+table,column_index,column,dtypes,non_null,missing,numeric_count,numeric_min,numeric_max,numeric_mean,unique_count,sample_values
+00_run_inventory.csv,0,method,object,39,0,0,,,,4,ours | cent_ppo | ma_a2c | mappo
+00_run_inventory.csv,1,variant,object,39,0,0,,,,2,no_neighbor | full
+00_run_inventory.csv,2,scenario,object,39,0,0,,,,3,urban | highway | mixed
+00_run_inventory.csv,3,num_bs,int64,39,0,39,4.0,8.0,4.3076923076923075,2,4 | 8
+00_run_inventory.csv,4,num_users,int64,39,0,39,20.0,160.0,81.53846153846153,7,80 | 160 | 20 | 40 | 60 | 100 | 120
+00_run_inventory.csv,5,experiment,object,39,0,0,,,,5,ablation | bs_scale | main | mobility | user_load
+00_run_inventory.csv,6,seed,int64,39,0,39,42.0,44.0,43.0,3,42 | 43 | 44
+00_run_inventory.csv,7,run_id,object,39,0,0,,,,39,ours__no_neighbor__urban__bs4__u80__ablation__seed42 | ours__no_neighbor__urban__bs4__u80__ablation__seed43 | ours__no_neighbor__urban__bs4__u80__ablation__seed44 | ours__full__urban__bs8__u160__bs_scale__seed42 | ours__full__urban__bs8__u160__bs_scale__seed43 | ours__full__urban__bs8__u160__bs_scale__seed44 | cent_ppo__full__urban__bs4__u80__main__seed42 | cent_ppo__full__urban__bs4__u80__main__seed43
+00_run_inventory.csv,8,num_eval_episodes,int64,39,0,39,20.0,20.0,20.0,1,20
+00_run_inventory.csv,9,throughput_Mbps,float64,39,0,39,54.108540121296286,382.771250771976,198.17623012259165,37,197.2848343546112 | 197.41591915401816 | 197.4051598162672 | 382.771250771976 | 382.0346543393935 | 380.41166475309126 | 194.71791526768723 | 196.28279592206744
+00_run_inventory.csv,10,mean_latency_ms,float64,39,0,39,56.6431545038429,247.45127209987976,144.0847722450537,39,159.82743558662582 | 136.09792108962682 | 138.58453969577886 | 153.93860818694296 | 164.56886634898885 | 144.67796880063648 | 148.39592498910088 | 136.1800538867453
+00_run_inventory.csv,11,p95_latency_ms,float64,39,0,39,156.76785833903153,615.1386429246027,426.09146006325795,39,463.4143652118784 | 435.0799412153131 | 440.56996082321496 | 464.1761090046528 | 475.9401764730304 | 451.5772356837542 | 455.6972132631147 | 435.9439553817384
+00_run_inventory.csv,12,deadline_satisfaction_pct,float64,39,0,39,23.8446875,80.46875,52.774754540598295,39,48.2903125 | 54.071875 | 53.6390625 | 50.55328125 | 47.70078125 | 52.98984375 | 51.2953125 | 54.0828125
+00_run_inventory.csv,13,blocking_pct,float64,39,0,39,0.0,0.7040625,0.033032852564102565,5,0.0 | 0.4353125 | 0.14765625 | 0.7040625 | 0.00125
+00_run_inventory.csv,14,avg_qoe,float64,39,0,39,0.6907398195868034,0.8531804251612084,0.7691376403306602,39,0.7577976149988108 | 0.7715297858169323 | 0.7692994928281734 | 0.7562472534286081 | 0.7493832583136063 | 0.7607690871451895 | 0.761572924259518 | 0.7703664735334008
+00_run_inventory.csv,15,fairness,float64,39,0,39,0.9136425013389684,0.9854082746412848,0.9663603012753074,37,0.9685712940372366 | 0.9701855384829708 | 0.9701345796570656 | 0.967928502025557 | 0.9687394397709296 | 0.9680632083055056 | 0.964540834993249 | 0.9695868976458906
+00_run_inventory.csv,16,energy_J_per_step,float64,39,0,39,436357.3642434348,996530.5319673036,525445.200995366,35,491088.67814345215 | 497288.9443074334 | 463962.8558399709 | 947878.08289943 | 915686.2205451193 | 996530.5319673036 | 493076.42710031866 | 499602.8602218264
+00_run_inventory.csv,17,walltime_ms_per_step,float64,39,0,39,5.758032381534576,109.58228504657744,22.61603139913999,39,15.886526465415956 | 15.78698033094406 | 15.633168816566467 | 108.69055390357973 | 109.22710293531418 | 109.58228504657744 | 18.50565755367279 | 18.484669387340546
+00_run_inventory.csv,18,mean_episode_return,float64,39,0,39,82.4154860353149,127.94622474207236,105.07314779840931,39,101.84620808330888 | 106.00196534627386 | 106.1809343597008 | 102.48603443692475 | 100.90129362177966 | 103.46314047853828 | 103.45825360919072 | 105.78595037027064
+00_run_inventory.csv,19,training_iterations,int64,39,0,39,200.0,200.0,200.0,1,200
+00_run_inventory.csv,20,training_env_steps,int64,39,0,39,200000.0,200000.0,200000.0,1,200000
+00_run_inventory.csv,21,training_walltime_s,float64,39,0,39,2231.0208444595337,25070.348390579224,5847.705003010921,39,4587.96589422226 | 4641.41045665741 | 4573.923617601395 | 24856.40101838112 | 25050.253154039383 | 25070.348390579224 | 3885.9587893486014 | 3878.665544748306
+00_run_inventory.csv,22,algorithm_backend,object,39,0,0,,,,2,rllib_ppo | ppo_single_pass_a2c_compat
+00_run_inventory.csv,23,eval_user_steps_csv,object,39,0,0,,,,39,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed42/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed43/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed44/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed42/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed43/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed44/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed42/eval_user_steps.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed43/eval_user_steps.csv
+00_run_inventory.csv,24,code_version,object,39,0,0,,,,1,2026-08-26-paper-suite-v5.1-a2c-compat-scalability
+00_run_inventory.csv,25,run_dir,object,39,0,0,,,,39,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed43
+00_run_inventory.csv,26,summary_path,object,39,0,0,,,,39,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed42/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed43/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed44/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed42/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed43/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed44/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed42/run_summary.csv | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed43/run_summary.csv
+00_run_inventory.csv,27,algorithm,object,39,0,0,,,,4,Ours | Cent-PPO | MA-A2C | MAPPO
+01_run_integrity_audit.csv,0,run_id,object,39,0,0,,,,39,ours__no_neighbor__urban__bs4__u80__ablation__seed42 | ours__no_neighbor__urban__bs4__u80__ablation__seed43 | ours__no_neighbor__urban__bs4__u80__ablation__seed44 | ours__full__urban__bs8__u160__bs_scale__seed42 | ours__full__urban__bs8__u160__bs_scale__seed43 | ours__full__urban__bs8__u160__bs_scale__seed44 | cent_ppo__full__urban__bs4__u80__main__seed42 | cent_ppo__full__urban__bs4__u80__main__seed43
+01_run_integrity_audit.csv,1,algorithm,object,39,0,0,,,,4,Ours | Cent-PPO | MA-A2C | MAPPO
+01_run_integrity_audit.csv,2,method,object,39,0,0,,,,4,ours | cent_ppo | ma_a2c | mappo
+01_run_integrity_audit.csv,3,seed,int64,39,0,39,42.0,44.0,43.0,3,42 | 43 | 44
+01_run_integrity_audit.csv,4,experiment,object,39,0,0,,,,5,ablation | bs_scale | main | mobility | user_load
+01_run_integrity_audit.csv,5,scenario,object,39,0,0,,,,3,urban | highway | mixed
+01_run_integrity_audit.csv,6,num_bs,int64,39,0,39,4.0,8.0,4.3076923076923075,2,4 | 8
+01_run_integrity_audit.csv,7,num_users,int64,39,0,39,20.0,160.0,81.53846153846153,7,80 | 160 | 20 | 40 | 60 | 100 | 120
+01_run_integrity_audit.csv,8,training_env_steps,int64,39,0,39,200000.0,200000.0,200000.0,1,200000
+01_run_integrity_audit.csv,9,training_iterations,int64,39,0,39,200.0,200.0,200.0,1,200
+01_run_integrity_audit.csv,10,summary_num_eval_episodes,int64,39,0,39,20.0,20.0,20.0,1,20
+01_run_integrity_audit.csv,11,eval_episode_rows,int64,39,0,39,20.0,20.0,20.0,1,20
+01_run_integrity_audit.csv,12,eval_episode_unique,int64,39,0,39,20.0,20.0,20.0,1,20
+01_run_integrity_audit.csv,13,first_eval_episode,int64,39,0,39,0.0,0.0,0.0,1,0
+01_run_integrity_audit.csv,14,last_eval_episode,int64,39,0,39,19.0,19.0,19.0,1,19
+01_run_integrity_audit.csv,15,first_eval_seed,float64,0,39,0,,,,0,
+01_run_integrity_audit.csv,16,last_eval_seed,float64,0,39,0,,,,0,
+01_run_integrity_audit.csv,17,eval_steps_rows,int64,39,0,39,4000.0,4000.0,4000.0,1,4000
+01_run_integrity_audit.csv,18,config_exists,bool,39,0,39,1.0,1.0,1.0,1,True
+01_run_integrity_audit.csv,19,status,object,39,0,0,,,,1,PASS
+01_run_integrity_audit.csv,20,notes,float64,0,39,0,,,,0,
+02_main_seed_metrics.csv,0,run_id,object,12,0,0,,,,12,cent_ppo__full__urban__bs4__u80__main__seed42 | cent_ppo__full__urban__bs4__u80__main__seed43 | cent_ppo__full__urban__bs4__u80__main__seed44 | mappo__full__urban__bs4__u80__main__seed42 | mappo__full__urban__bs4__u80__main__seed43 | mappo__full__urban__bs4__u80__main__seed44 | ma_a2c__full__urban__bs4__u80__main__seed42 | ma_a2c__full__urban__bs4__u80__main__seed43
+02_main_seed_metrics.csv,1,algorithm,object,12,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+02_main_seed_metrics.csv,2,method,object,12,0,0,,,,4,cent_ppo | mappo | ma_a2c | ours
+02_main_seed_metrics.csv,3,seed,int64,12,0,12,42.0,44.0,43.0,3,42 | 43 | 44
+02_main_seed_metrics.csv,4,experiment,object,12,0,0,,,,1,main
+02_main_seed_metrics.csv,5,scenario,object,12,0,0,,,,1,urban
+02_main_seed_metrics.csv,6,num_bs,int64,12,0,12,4.0,4.0,4.0,1,4
+02_main_seed_metrics.csv,7,num_users,int64,12,0,12,80.0,80.0,80.0,1,80
+02_main_seed_metrics.csv,8,throughput_Mbps,float64,12,0,12,192.1226713734953,197.41942741060683,196.228529171005,10,194.71791526768723 | 196.28279592206744 | 195.92003735158693 | 197.26053839351405 | 195.1947275753363 | 192.1226713734953 | 197.28461253355343 | 196.56344275477232
+02_main_seed_metrics.csv,9,mean_latency_ms,float64,12,0,12,135.96787916439916,247.45127209987976,166.35970847121087,12,148.39592498910088 | 136.1800538867453 | 155.2430782071015 | 164.44202635834228 | 136.19317708694868 | 141.2116298626886 | 216.9645773086104 | 215.1972444906328
+02_main_seed_metrics.csv,10,p95_latency_ms,float64,12,0,12,433.445776955797,560.6131523423255,459.87426479489017,12,455.6972132631147 | 435.9439553817384 | 464.5152642330143 | 474.5862982603968 | 433.445776955797 | 446.0989887906175 | 452.6697532660934 | 453.0899261387603
+02_main_seed_metrics.csv,11,deadline_satisfaction_pct,float64,12,0,12,23.8446875,54.0996875,44.97114583333334,12,51.2953125 | 54.0828125 | 49.63375 | 47.59875 | 53.9903125 | 53.11625 | 24.991875 | 25.1503125
+02_main_seed_metrics.csv,12,blocking_pct,float64,12,0,12,0.0,0.0,0.0,1,0.0
+02_main_seed_metrics.csv,13,avg_qoe,float64,12,0,12,0.6907398195868034,0.7716521555084006,0.7507851488339213,12,0.761572924259518 | 0.7703664735334008 | 0.7588134092380462 | 0.7537011765187851 | 0.7693624426407222 | 0.7620514581445171 | 0.7217917632846824 | 0.7235661645271799
+02_main_seed_metrics.csv,14,fairness,float64,12,0,12,0.964018905461412,0.9746680132437032,0.9681350657363819,10,0.964540834993249 | 0.9695868976458906 | 0.964018905461412 | 0.9657616684255445 | 0.9736288783984304 | 0.9746680132437032 | 0.9652481982539372 | 0.968624391957878
+02_main_seed_metrics.csv,15,energy_J_per_step,float64,12,0,12,436357.3642434348,500160.0,484191.45152351726,10,493076.42710031866 | 499602.8602218264 | 496638.66385288193 | 445384.7019553187 | 489725.6874616441 | 436357.3642434348 | 500160.0 | 500153.903660472
+02_main_seed_metrics.csv,16,walltime_ms_per_step,float64,12,0,12,15.72246503829956,18.74871051311493,17.25315897166729,12,18.50565755367279 | 18.484669387340546 | 18.74871051311493 | 18.69670081138611 | 18.53377825021744 | 18.433067560195923 | 15.949009597301483 | 15.933578550815582
+02_main_seed_metrics.csv,17,mean_episode_return,float64,12,0,12,82.4154860353149,106.24959911370595,99.67088394430606,12,103.45825360919072 | 105.78595037027064 | 102.32225337104818 | 101.85052031538189 | 105.88968073562486 | 105.60432888932932 | 87.24344095063952 | 87.5550521744201
+02_main_seed_metrics.csv,18,training_env_steps,int64,12,0,12,200000.0,200000.0,200000.0,1,200000
+02_main_seed_metrics.csv,19,training_iterations,int64,12,0,12,200.0,200.0,200.0,1,200
+02_main_seed_metrics.csv,20,training_walltime_s,float64,12,0,12,3796.1001856327057,4611.048085689545,4205.166167040666,12,3885.9587893486014 | 3878.665544748306 | 3901.375830888748 | 4533.13742351532 | 4508.629887342453 | 4494.296009063721 | 3855.437086343765 | 3824.983960390091
+02_main_seed_metrics.csv,21,algorithm_backend,object,12,0,0,,,,2,rllib_ppo | ppo_single_pass_a2c_compat
+02_main_seed_metrics.csv,22,run_dir,object,12,0,0,,,,12,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/cent_ppo__full__urban__bs4__u80__main__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/mappo__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/mappo__full__urban__bs4__u80__main__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/mappo__full__urban__bs4__u80__main__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ma_a2c__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ma_a2c__full__urban__bs4__u80__main__seed43
+03_main_cross_seed_summary.csv,0,algorithm,object,4,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+03_main_cross_seed_summary.csv,1,n_seeds,int64,4,0,4,3.0,3.0,3.0,1,3
+03_main_cross_seed_summary.csv,2,throughput_Mbps_mean,float64,4,0,4,194.85931244744856,197.28461253355343,196.228529171005,4,195.64024951378053 | 194.85931244744856 | 197.28461253355343 | 197.12994218923745
+03_main_cross_seed_summary.csv,3,throughput_Mbps_sd,float64,4,0,4,0.0,2.585304016911945,0.973761480293192,4,0.819099378129197 | 2.585304016911945 | 0.0 | 0.4906425261316262
+03_main_cross_seed_summary.csv,4,throughput_Mbps_sem,float64,4,0,4,0.0,1.4926259701011322,0.5622014527737629,4,0.4729072464559469 | 1.4926259701011322 | 0.0 | 0.2832725945379724
+03_main_cross_seed_summary.csv,5,throughput_Mbps_ci95,float64,4,0,4,0.0,6.422769549345172,2.4191528512855016,4,2.03491988149994 | 6.422769549345172 | 0.0 | 1.218921974296895
+03_main_cross_seed_summary.csv,6,mean_latency_ms_mean,float64,4,0,4,145.01250578816004,226.53769796637437,166.35970847121087,4,146.60635236098256 | 147.2822777693265 | 226.53769796637437 | 145.01250578816004
+03_main_cross_seed_summary.csv,7,mean_latency_ms_sd,float64,4,0,4,9.656689479480308,18.13323064433353,13.836636955611427,4,9.656689479480308 | 15.07112954606436 | 18.13323064433353 | 12.485498152567509
+03_main_cross_seed_summary.csv,8,mean_latency_ms_sem,float64,4,0,4,5.575292270458584,10.469225593783536,7.988586071001382,4,5.575292270458584 | 8.701320700411982 | 10.469225593783536 | 7.208505719351427
+03_main_cross_seed_summary.csv,9,mean_latency_ms_ci95,float64,4,0,4,23.990482639783284,45.04907773005056,34.37488586351895,4,23.990482639783284 | 37.44178297387276 | 45.04907773005056 | 31.01820011036919
+03_main_cross_seed_summary.csv,10,p95_latency_ms_mean,float64,4,0,4,447.27694963560793,488.7909439157264,459.87426479489017,4,452.0521442926225 | 451.3770213356038 | 488.7909439157264 | 447.27694963560793
+03_main_cross_seed_summary.csv,11,p95_latency_ms_sd,float64,4,0,4,14.528110488200884,62.200211846633735,28.107646219920174,4,14.630270613303187 | 21.071991931542883 | 62.200211846633735 | 14.528110488200884
+03_main_cross_seed_summary.csv,12,p95_latency_ms_sem,float64,4,0,4,8.387808501179407,35.911309053305736,16.22795711135768,4,8.446790676907668 | 12.165920214037904 | 35.911309053305736 | 8.387808501179407
+03_main_cross_seed_summary.csv,13,p95_latency_ms_ci95,float64,4,0,4,36.09273998057499,154.5263628563746,69.8288994501721,4,36.34654028273369 | 52.34995468100511 | 154.5263628563746 | 36.09273998057499
+03_main_cross_seed_summary.csv,14,deadline_satisfaction_pct_mean,float64,4,0,4,24.662291666666665,51.98322916666667,44.97114583333334,4,51.670625 | 51.56843750000001 | 24.662291666666665 | 51.98322916666667
+03_main_cross_seed_summary.csv,15,deadline_satisfaction_pct_sd,float64,4,0,4,0.712483712350383,3.4655173422187264,2.385684126383239,4,2.2481512152697287 | 3.4655173422187264 | 0.712483712350383 | 3.1165842356941167
+03_main_cross_seed_summary.csv,16,deadline_satisfaction_pct_sem,float64,4,0,4,0.4113526631187175,2.000817370411298,1.37737537256878,4,1.2979707093149622 | 2.000817370411298 | 0.4113526631187175 | 1.7993607474301423
+03_main_cross_seed_summary.csv,17,deadline_satisfaction_pct_ci95,float64,4,0,4,1.7700505093998415,8.609517144879815,5.926846228163461,4,5.5851679621822825 | 8.609517144879815 | 1.7700505093998415 | 7.742649296191903
+03_main_cross_seed_summary.csv,18,blocking_pct_mean,float64,4,0,4,0.0,0.0,0.0,1,0.0
+03_main_cross_seed_summary.csv,19,blocking_pct_sd,float64,4,0,4,0.0,0.0,0.0,1,0.0
+03_main_cross_seed_summary.csv,20,blocking_pct_sem,float64,4,0,4,0.0,0.0,0.0,1,0.0
+03_main_cross_seed_summary.csv,21,blocking_pct_ci95,float64,4,0,4,0.0,0.0,0.0,1,0.0
+03_main_cross_seed_summary.csv,22,avg_qoe_mean,float64,4,0,4,0.712032582466222,0.765818718091134,0.7507851488339214,4,0.7635842690103217 | 0.7617050257680081 | 0.712032582466222 | 0.765818718091134
+03_main_cross_seed_summary.csv,23,avg_qoe_sd,float64,4,0,4,0.006033444657332,0.0184614040154507,0.0099118336514882,4,0.006033444657332 | 0.0078363783522207 | 0.0184614040154507 | 0.0073161075809494
+03_main_cross_seed_summary.csv,24,avg_qoe_sem,float64,4,0,4,0.0034834108970513,0.0106586965779389,0.005722599826849475,4,0.0034834108970513 | 0.0045243351511263 | 0.0106586965779389 | 0.0042239566812814
+03_main_cross_seed_summary.csv,25,avg_qoe_ci95,float64,4,0,4,0.014989117090012,0.0458643713748712,0.024624347054933476,4,0.014989117090012 | 0.0194682141552968 | 0.0458643713748712 | 0.0181756855995539
+03_main_cross_seed_summary.csv,26,fairness_mean,float64,4,0,4,0.9652481982539372,0.9713528533558928,0.9681350657363819,4,0.9660488793668506 | 0.9713528533558928 | 0.9652481982539372 | 0.9698903319688468
+03_main_cross_seed_summary.csv,27,fairness_sd,float64,4,0,4,0.0,0.0048699036952161,0.0022663066856622,4,0.0030751069275989 | 0.0048699036952161 | 0.0 | 0.0011202161198338
+03_main_cross_seed_summary.csv,28,fairness_sem,float64,4,0,4,0.0,0.0028116402093605,0.0013084527750333,4,0.0017754138124361 | 0.0028116402093605 | 0.0 | 0.0006467570783366
+03_main_cross_seed_summary.csv,29,fairness_ci95,float64,4,0,4,0.0,0.0120984878208786,0.005630272290968424,4,0.0076396056349126 | 0.0120984878208786 | 0.0 | 0.0027829957080825
+03_main_cross_seed_summary.csv,30,energy_J_per_step_mean,float64,4,0,4,457155.9178867992,500160.0,484191.4515235172,4,496439.31705834233 | 457155.9178867992 | 500160.0 | 483010.5711489274
+03_main_cross_seed_summary.csv,31,energy_J_per_step_sd,float64,4,0,4,0.0,29005.31038047773,15209.550618818568,4,3267.780084514298 | 28565.11201028224 | 0.0 | 29005.31038047773
+03_main_cross_seed_summary.csv,32,energy_J_per_step_sem,float64,4,0,4,0.0,16746.223756097468,8781.238144028139,4,1886.653711446828 | 16492.075108568264 | 0.0 | 16746.223756097468
+03_main_cross_seed_summary.csv,33,energy_J_per_step_ci95,float64,4,0,4,0.0,72059.0008224874,37785.667733753085,4,8118.270920355701 | 70965.39919216924 | 0.0 | 72059.0008224874
+03_main_cross_seed_summary.csv,34,walltime_ms_per_step_mean,float64,4,0,4,15.900340537230171,18.579679151376087,17.25315897166729,4,18.579679151376087 | 18.554515540599823 | 15.978100657463074 | 15.900340537230171
+03_main_cross_seed_summary.csv,35,walltime_ms_per_step_sd,float64,4,0,4,0.0642160653159223,0.1694220841402915,0.12835841543817086,4,0.1467611212820432 | 0.1330343910144265 | 0.0642160653159223 | 0.1694220841402915
+03_main_cross_seed_summary.csv,36,walltime_ms_per_step_sem,float64,4,0,4,0.0370751625964463,0.0978158858850647,0.07410776570598175,4,0.084732572878759 | 0.076807441463657 | 0.0370751625964463 | 0.0978158858850647
+03_main_cross_seed_summary.csv,37,walltime_ms_per_step_ci95,float64,4,0,4,0.1595344246525087,0.4209017569634337,0.31888571583283964,4,0.3646042610973 | 0.3305024206181164 | 0.1595344246525087 | 0.4209017569634337
+03_main_cross_seed_summary.csv,38,mean_episode_return_mean,float64,4,0,4,85.73799305345817,104.64188029348414,99.67088394430604,4,103.85548578350318 | 104.44817664677868 | 85.73799305345817 | 104.64188029348414
+03_main_cross_seed_summary.csv,39,mean_episode_return_sd,float64,4,0,4,1.7656852142546324,2.881590715716754,2.3662838527289924,4,1.7656852142546324 | 2.2541562126615142 | 2.881590715716754 | 2.56370326828307
+03_main_cross_seed_summary.csv,40,mean_episode_return_sem,float64,4,0,4,1.0194188337540542,1.6636871754133944,1.3661746193521487,4,1.0194188337540542 | 1.301437696175593 | 1.6636871754133944 | 1.480154772065554
+03_main_cross_seed_summary.csv,41,mean_episode_return_ci95,float64,4,0,4,4.386559241643695,7.158845915803836,5.878649387072296,4,4.386559241643695 | 5.600086406643575 | 7.158845915803836 | 6.369105984198078
+03_main_cross_seed_summary.csv,42,training_walltime_s_mean,float64,4,0,4,3825.5070774555206,4594.469762404759,4205.166167040666,4,3888.666721661885 | 4512.021106640498 | 3825.5070774555206 | 4594.469762404759
+03_main_cross_seed_summary.csv,43,training_walltime_s_sd,float64,4,0,4,11.594781033084956,29.671909023462405,20.859014447378815,4,11.594781033084956 | 19.6415158629826 | 29.671909023462405 | 22.527851869985295
+03_main_cross_seed_summary.csv,44,training_walltime_s_sem,float64,4,0,4,6.694249950646366,17.131084662066105,12.042957606224451,4,6.694249950646366 | 11.340034470785309 | 17.131084662066105 | 13.006461341400026
+03_main_cross_seed_summary.csv,45,training_walltime_s_ci95,float64,4,0,4,28.805357537631316,73.71505730087044,51.820846579583815,4,28.805357537631316 | 48.79616832778918 | 73.71505730087044 | 55.96680315204432
+04_task_deadline_seed_metrics.csv,0,run_id,object,36,0,0,,,,12,cent_ppo__full__urban__bs4__u80__main__seed42 | cent_ppo__full__urban__bs4__u80__main__seed43 | cent_ppo__full__urban__bs4__u80__main__seed44 | mappo__full__urban__bs4__u80__main__seed42 | mappo__full__urban__bs4__u80__main__seed43 | mappo__full__urban__bs4__u80__main__seed44 | ma_a2c__full__urban__bs4__u80__main__seed42 | ma_a2c__full__urban__bs4__u80__main__seed43
+04_task_deadline_seed_metrics.csv,1,algorithm,object,36,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+04_task_deadline_seed_metrics.csv,2,method,object,36,0,0,,,,4,cent_ppo | mappo | ma_a2c | ours
+04_task_deadline_seed_metrics.csv,3,seed,int64,36,0,36,42.0,44.0,43.0,3,42 | 43 | 44
+04_task_deadline_seed_metrics.csv,4,num_bs,int64,36,0,36,4.0,4.0,4.0,1,4
+04_task_deadline_seed_metrics.csv,5,num_users,int64,36,0,36,80.0,80.0,80.0,1,80
+04_task_deadline_seed_metrics.csv,6,n_eval_episodes,int64,36,0,36,20.0,20.0,20.0,1,20
+04_task_deadline_seed_metrics.csv,7,task_group,object,36,0,0,,,,3,overall | light | heavy
+04_task_deadline_seed_metrics.csv,8,n_rows,int64,36,0,36,96256.0,320000.0,213333.33333333334,3,320000 | 96256 | 223744
+04_task_deadline_seed_metrics.csv,9,deadline_candidates,int64,36,0,36,96256.0,320000.0,213333.33333333334,3,320000 | 96256 | 223744
+04_task_deadline_seed_metrics.csv,10,deadline_hits,int64,36,0,36,3139.0,173119.0,95938.44444444444,30,164145 | 96256 | 67889 | 173065 | 76809 | 158828 | 62572 | 152316
+04_task_deadline_seed_metrics.csv,11,deadline_satisfaction_pct,float64,36,0,36,3.2610954122340425,100.0,51.109260343888465,30,51.2953125 | 100.0 | 30.34226616132723 | 54.0828125 | 34.32896524599543 | 49.63375 | 27.965889588100687 | 47.59875
+04_task_deadline_seed_metrics.csv,12,mean_latency_ms,float64,36,0,36,3.326091202004432,357.79188511946336,149.1552516133257,36,148.39592498910088 | 10.063246419393488 | 207.90746634174388 | 136.1800538867453 | 3.3296225615923194 | 193.33309985729167 | 155.2430782071015 | 14.482676169890128
+04_task_deadline_seed_metrics.csv,13,p95_latency_ms,float64,36,0,36,3.46526935302158,605.9670783263117,357.0946012279085,36,455.6972132631147 | 33.31044295392675 | 486.4842907474965 | 435.9439553817383 | 3.4750610543963045 | 465.46203699516167 | 464.5152642330143 | 38.853470024411706
+04_task_deadline_seed_metrics.csv,14,avg_qoe,float64,36,0,36,0.5912956858178925,0.8484989751045802,0.760634598929876,36,0.761572924259518 | 0.8459354326065225 | 0.7252796712406694 | 0.7703664735334008 | 0.8474145667961032 | 0.7372199254020779 | 0.7588134092380462 | 0.8470674167086245
+05_task_deadline_cross_seed_summary.csv,0,algorithm,object,12,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+05_task_deadline_cross_seed_summary.csv,1,task_group,object,12,0,0,,,,3,heavy | light | overall
+05_task_deadline_cross_seed_summary.csv,2,n_seeds,int64,12,0,12,3.0,3.0,3.0,1,3
+05_task_deadline_cross_seed_summary.csv,3,deadline_hits_pooled,int64,12,0,12,26808.0,499039.0,287815.3333333333,11,207270 | 288768 | 496038 | 206661 | 288396 | 495057 | 209950 | 26808
+05_task_deadline_cross_seed_summary.csv,4,deadline_candidates_pooled,int64,12,0,12,288768.0,960000.0,640000.0,3,671232 | 288768 | 960000
+05_task_deadline_cross_seed_summary.csv,5,n_rows_pooled,int64,12,0,12,288768.0,960000.0,640000.0,3,671232 | 288768 | 960000
+05_task_deadline_cross_seed_summary.csv,6,deadline_satisfaction_pct_pooled,float64,12,0,12,9.283577127659576,100.0,51.10926034388845,11,30.87904033180778 | 100.0 | 51.670625 | 30.78831164187643 | 99.87117686170212 | 51.5684375 | 31.27830615942029 | 9.283577127659576
+05_task_deadline_cross_seed_summary.csv,7,deadline_satisfaction_pct_mean,float64,12,0,12,9.283577127659576,100.0,51.10926034388845,11,30.879040331807783 | 100.0 | 51.670625 | 30.78831164187643 | 99.87117686170212 | 51.56843750000001 | 31.278306159420293 | 9.283577127659576
+05_task_deadline_cross_seed_summary.csv,8,deadline_satisfaction_pct_sd,float64,12,0,12,0.0,5.231215586556581,2.406934499488574,11,3.21531924380682 | 0.0 | 2.2481512152697287 | 4.995097914764437 | 0.2088982501256119 | 3.4655173422187264 | 1.232589176580326 | 5.231215586556581
+05_task_deadline_cross_seed_summary.csv,9,deadline_satisfaction_pct_ci95,float64,12,0,12,0.0,12.996108757657115,5.979639342010164,11,7.987940449345368 | 0.0 | 5.5851679621822825 | 12.409512603963634 | 0.5189739044388642 | 8.609517144879817 | 3.0621683865438394 | 12.996108757657115
+05_task_deadline_cross_seed_summary.csv,10,mean_latency_ms_mean,float64,12,0,12,8.112437659910494,277.13979847056123,149.15525161332567,12,205.6798689462072 | 9.291848383625313 | 146.60635236098256 | 206.9593868536393 | 8.564742291429246 | 147.2822777693265 | 204.76837326434423 | 277.13979847056123
+05_task_deadline_cross_seed_summary.csv,11,mean_latency_ms_sd,float64,12,0,12,4.149971969720093,69.92982394993433,16.283824955987715,12,11.397423674929373 | 5.616399415513594 | 9.656689479480308 | 18.006305329131095 | 8.325869129857907 | 15.07112954606436 | 4.149971969720093 | 69.92982394993433
+05_task_deadline_cross_seed_summary.csv,12,mean_latency_ms_ci95,float64,12,0,12,10.309933927844922,173.72933354011985,40.454528515803226,12,28.31505511207172 | 13.95303566116316 | 23.990482639783284 | 44.73375231988971 | 20.684274796802637 | 37.44178297387276 | 10.309933927844922 | 173.72933354011985
+05_task_deadline_cross_seed_summary.csv,13,p95_latency_ms_mean,float64,12,0,12,15.760669765610798,488.7909439157264,357.0946012279085,12,482.5749834961154 | 25.212991344244923 | 452.0521442926224 | 479.8200428147729 | 16.131849750846815 | 451.3770213356038 | 480.9928157568153 | 468.8533749111202
+05_task_deadline_cross_seed_summary.csv,14,p95_latency_ms_sd,float64,12,0,12,4.1767820662320805,118.88509050841608,29.113571720860694,12,15.531769225736314 | 19.02851799906579 | 14.630270613303251 | 21.19162596280202 | 21.882744345581667 | 21.071991931542826 | 4.1767820662320805 | 118.88509050841608
+05_task_deadline_cross_seed_summary.csv,15,p95_latency_ms_ci95,float64,12,0,12,10.376539274978478,295.3507727499913,72.32795860688506,12,38.58616773035144 | 47.2732743128403 | 36.34654028273385 | 52.64716607587789 | 54.364137880691736 | 52.349954681004974 | 10.376539274978478 | 295.3507727499913
+05_task_deadline_cross_seed_summary.csv,16,avg_qoe_mean,float64,12,0,12,0.6696287182136825,0.8482303689579324,0.7606345989298758,12,0.7277818689286333 | 0.8468058053704167 | 0.7635842690103217 | 0.7254806224529337 | 0.8459074951759212 | 0.7617050257680081 | 0.7302749771561015 | 0.6696287182136825
+05_task_deadline_cross_seed_summary.csv,17,avg_qoe_sd,float64,12,0,12,0.0004617646644214,0.0679173515304616,0.012060156700506858,12,0.0084688854153813 | 0.0007734919889085 | 0.006033444657332 | 0.0117274766603761 | 0.0026403177086818 | 0.0078363783522207 | 0.0028148418468769 | 0.0679173515304616
+05_task_deadline_cross_seed_summary.csv,18,avg_qoe_ci95,float64,12,0,12,0.0011471795990755,0.1687296714152277,0.029961508089431436,12,0.0210395756193409 | 0.0019216157018773 | 0.014989117090012 | 0.0291350183545883 | 0.0065594421657899 | 0.0194682141552968 | 0.0069930191505827 | 0.1687296714152277
+06_deadline_overall_light_heavy.csv,0,algorithm,object,4,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+06_deadline_overall_light_heavy.csv,1,overall_deadline_pct_mean,float64,4,0,4,24.662291666666665,51.98322916666667,44.97114583333334,4,51.670625 | 51.56843750000001 | 24.662291666666665 | 51.98322916666667
+06_deadline_overall_light_heavy.csv,2,overall_deadline_pct_sd,float64,4,0,4,0.712483712350383,3.4655173422187264,2.385684126383239,4,2.2481512152697287 | 3.4655173422187264 | 0.712483712350383 | 3.1165842356941167
+06_deadline_overall_light_heavy.csv,3,overall_deadline_pct_ci95,float64,4,0,4,1.7700505093998415,8.609517144879817,5.926846228163461,4,5.5851679621822825 | 8.609517144879817 | 1.7700505093998415 | 7.742649296191902
+06_deadline_overall_light_heavy.csv,4,overall_deadline_pct_pooled,float64,4,0,4,24.66229166666667,51.98322916666667,44.97114583333333,4,51.670625 | 51.5684375 | 24.66229166666667 | 51.98322916666667
+06_deadline_overall_light_heavy.csv,5,overall_hits_pooled,int64,4,0,4,236758.0,499039.0,431723.0,4,496038 | 495057 | 236758 | 499039
+06_deadline_overall_light_heavy.csv,6,overall_candidates_pooled,int64,4,0,4,960000.0,960000.0,960000.0,1,960000
+06_deadline_overall_light_heavy.csv,7,light_deadline_pct_mean,float64,4,0,4,9.283577127659576,100.0,77.28868849734042,3,100.0 | 99.87117686170212 | 9.283577127659576
+06_deadline_overall_light_heavy.csv,8,light_deadline_pct_sd,float64,4,0,4,0.0,5.231215586556581,1.3600284591705483,3,0.0 | 0.2088982501256119 | 5.231215586556581
+06_deadline_overall_light_heavy.csv,9,light_deadline_pct_ci95,float64,4,0,4,0.0,12.996108757657115,3.378770665523995,3,0.0 | 0.5189739044388642 | 12.996108757657115
+06_deadline_overall_light_heavy.csv,10,light_deadline_pct_pooled,float64,4,0,4,9.283577127659576,100.0,77.28868849734042,3,100.0 | 99.87117686170212 | 9.283577127659576
+06_deadline_overall_light_heavy.csv,11,light_hits_pooled,int64,4,0,4,26808.0,288768.0,223185.0,3,288768 | 288396 | 26808
+06_deadline_overall_light_heavy.csv,12,light_candidates_pooled,int64,4,0,4,288768.0,288768.0,288768.0,1,288768
+06_deadline_overall_light_heavy.csv,13,heavy_deadline_pct_mean,float64,4,0,4,30.78831164187643,31.326128670861937,31.06794670099161,4,30.879040331807783 | 30.78831164187643 | 31.278306159420293 | 31.326128670861937
+06_deadline_overall_light_heavy.csv,14,heavy_deadline_pct_sd,float64,4,0,4,1.232589176580326,4.995097914764437,3.475090912911936,4,3.21531924380682 | 4.995097914764437 | 1.232589176580326 | 4.457357316496162
+06_deadline_overall_light_heavy.csv,15,heavy_deadline_pct_ci95,float64,4,0,4,3.0621683865438394,12.409512603963634,8.633301132343037,4,7.987940449345368 | 12.409512603963634 | 3.0621683865438394 | 11.07358308951931
+06_deadline_overall_light_heavy.csv,16,heavy_deadline_pct_pooled,float64,4,0,4,30.78831164187643,31.326128670861937,31.06794670099161,4,30.87904033180778 | 30.78831164187643 | 31.27830615942029 | 31.326128670861937
+06_deadline_overall_light_heavy.csv,17,heavy_hits_pooled,int64,4,0,4,206661.0,210271.0,208538.0,4,207270 | 206661 | 209950 | 210271
+06_deadline_overall_light_heavy.csv,18,heavy_candidates_pooled,int64,4,0,4,671232.0,671232.0,671232.0,1,671232
+07_deadline_reconstruction_audit.csv,0,run_id,object,12,0,0,,,,12,cent_ppo__full__urban__bs4__u80__main__seed42 | cent_ppo__full__urban__bs4__u80__main__seed43 | cent_ppo__full__urban__bs4__u80__main__seed44 | mappo__full__urban__bs4__u80__main__seed42 | mappo__full__urban__bs4__u80__main__seed43 | mappo__full__urban__bs4__u80__main__seed44 | ma_a2c__full__urban__bs4__u80__main__seed42 | ma_a2c__full__urban__bs4__u80__main__seed43
+07_deadline_reconstruction_audit.csv,1,algorithm,object,12,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+07_deadline_reconstruction_audit.csv,2,method,object,12,0,0,,,,4,cent_ppo | mappo | ma_a2c | ours
+07_deadline_reconstruction_audit.csv,3,seed,int64,12,0,12,42.0,44.0,43.0,3,42 | 43 | 44
+07_deadline_reconstruction_audit.csv,4,num_bs,int64,12,0,12,4.0,4.0,4.0,1,4
+07_deadline_reconstruction_audit.csv,5,num_users,int64,12,0,12,80.0,80.0,80.0,1,80
+07_deadline_reconstruction_audit.csv,6,n_eval_episodes,int64,12,0,12,20.0,20.0,20.0,1,20
+07_deadline_reconstruction_audit.csv,7,expected_user_rows,int64,12,0,12,320000.0,320000.0,320000.0,1,320000
+07_deadline_reconstruction_audit.csv,8,observed_user_rows,int64,12,0,12,320000.0,320000.0,320000.0,1,320000
+07_deadline_reconstruction_audit.csv,9,row_count_match,bool,12,0,12,1.0,1.0,1.0,1,True
+07_deadline_reconstruction_audit.csv,10,eval_seed_count,int64,12,0,12,20.0,20.0,20.0,1,20
+07_deadline_reconstruction_audit.csv,11,first_eval_seed,int64,12,0,12,900000.0,900000.0,900000.0,1,900000
+07_deadline_reconstruction_audit.csv,12,last_eval_seed,int64,12,0,12,900019.0,900019.0,900019.0,1,900019
+07_deadline_reconstruction_audit.csv,13,raw_overall_deadline_pct,float64,12,0,12,23.8446875,54.0996875,44.97114583333334,12,51.2953125 | 54.0828125 | 49.63375 | 47.59875 | 53.9903125 | 53.11625 | 24.991875 | 25.1503125
+07_deadline_reconstruction_audit.csv,14,run_summary_deadline_pct,float64,12,0,12,23.8446875,54.0996875,44.97114583333334,12,51.2953125 | 54.0828125 | 49.63375 | 47.59875 | 53.9903125 | 53.11625 | 24.991875 | 25.1503125
+07_deadline_reconstruction_audit.csv,15,deadline_difference_pp,float64,12,0,12,0.0,0.0,0.0,1,0.0
+07_deadline_reconstruction_audit.csv,16,deadline_match,bool,12,0,12,1.0,1.0,1.0,1,True
+08_service_class_seed_metrics.csv,0,run_id,object,24,0,0,,,,12,cent_ppo__full__urban__bs4__u80__main__seed42 | cent_ppo__full__urban__bs4__u80__main__seed43 | cent_ppo__full__urban__bs4__u80__main__seed44 | mappo__full__urban__bs4__u80__main__seed42 | mappo__full__urban__bs4__u80__main__seed43 | mappo__full__urban__bs4__u80__main__seed44 | ma_a2c__full__urban__bs4__u80__main__seed42 | ma_a2c__full__urban__bs4__u80__main__seed43
+08_service_class_seed_metrics.csv,1,algorithm,object,24,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+08_service_class_seed_metrics.csv,2,method,object,24,0,0,,,,4,cent_ppo | mappo | ma_a2c | ours
+08_service_class_seed_metrics.csv,3,seed,int64,24,0,24,42.0,44.0,43.0,3,42 | 43 | 44
+08_service_class_seed_metrics.csv,4,num_bs,int64,24,0,24,4.0,4.0,4.0,1,4
+08_service_class_seed_metrics.csv,5,num_users,int64,24,0,24,80.0,80.0,80.0,1,80
+08_service_class_seed_metrics.csv,6,n_eval_episodes,int64,24,0,24,20.0,20.0,20.0,1,20
+08_service_class_seed_metrics.csv,7,service_class,object,24,0,0,,,,2,infotainment | safety
+08_service_class_seed_metrics.csv,8,n_rows,int64,24,0,24,89800.0,230200.0,160000.0,2,230200 | 89800
+08_service_class_seed_metrics.csv,9,deadline_candidates,int64,24,0,24,89800.0,230200.0,160000.0,2,230200 | 89800
+08_service_class_seed_metrics.csv,10,deadline_hits,int64,24,0,24,21518.0,124537.0,71953.83333333333,24,118137 | 46008 | 124465 | 48600 | 114380 | 44448 | 109718 | 42598
+08_service_class_seed_metrics.csv,11,deadline_satisfaction_pct,float64,24,0,24,23.79887054735013,54.12026726057906,44.956852825437615,24,51.31928757602085 | 51.23385300668152 | 54.06820156385752 | 54.12026726057906 | 49.687228496959165 | 49.496659242761694 | 47.66203301476977 | 47.43652561247216
+08_service_class_seed_metrics.csv,12,mean_latency_ms,float64,24,0,24,135.88408196743737,247.50251122068485,166.41295150107956,24,148.33583532734843 | 148.54996329795856 | 136.15752720098249 | 136.23780046873418 | 155.06185338579533 | 155.70764339490404 | 164.36333190560353 | 164.6437575723786
+08_service_class_seed_metrics.csv,13,p95_latency_ms,float64,24,0,24,432.8097208031116,560.9053121278779,460.3608645841669,24,454.7919657890519 | 458.09390774638007 | 435.4178074731246 | 436.9937358574852 | 463.8358458042143 | 466.4175871906807 | 474.0714659886638 | 475.5573685712909
+08_service_class_seed_metrics.csv,14,avg_qoe,float64,24,0,24,0.631644849197793,0.9227444365779228,0.7972035912760539,24,0.7016885856383995 | 0.915084892528799 | 0.7109640476119536 | 0.9226430709400506 | 0.6994092630239119 | 0.911094416570938 | 0.6946817321520684 | 0.9049960105189876
+09_service_class_cross_seed_summary.csv,0,algorithm,object,8,0,0,,,,4,Cent-PPO | MAPPO | MA-A2C | Ours
+09_service_class_cross_seed_summary.csv,1,service_class,object,8,0,0,,,,2,infotainment | safety
+09_service_class_cross_seed_summary.csv,2,n_seeds,int64,8,0,8,3.0,3.0,3.0,1,3
+09_service_class_cross_seed_summary.csv,3,deadline_hits_pooled,int64,8,0,8,66531.0,359184.0,215861.5,8,356982 | 139056 | 356395 | 138662 | 170227 | 66531 | 359184 | 139855
+09_service_class_cross_seed_summary.csv,4,deadline_candidates_pooled,int64,8,0,8,269400.0,690600.0,480000.0,2,690600 | 269400
+09_service_class_cross_seed_summary.csv,5,n_rows_pooled,int64,8,0,8,269400.0,690600.0,480000.0,2,690600 | 269400
+09_service_class_cross_seed_summary.csv,6,deadline_satisfaction_pct_pooled,float64,8,0,8,24.64914567043151,52.010425716768026,44.95685282543761,8,51.69157254561251 | 51.61692650334076 | 51.60657399362873 | 51.47067557535264 | 24.64914567043151 | 24.69599109131403 | 52.010425716768026 | 51.91351150705271
+09_service_class_cross_seed_summary.csv,7,deadline_satisfaction_pct_mean,float64,8,0,8,24.64914567043151,52.010425716768026,44.95685282543761,8,51.69157254561251 | 51.61692650334076 | 51.60657399362873 | 51.47067557535263 | 24.64914567043151 | 24.69599109131403 | 52.010425716768026 | 51.91351150705271
+09_service_class_cross_seed_summary.csv,8,deadline_satisfaction_pct_sd,float64,8,0,8,0.6395812623504887,3.522098728759371,2.3981523697657545,8,2.214086341396848 | 2.3354864061878664 | 3.4434456404794265 | 3.522098728759371 | 0.7409228451157761 | 0.6395812623504887 | 3.080500897479767 | 3.209096836356492
+09_service_class_cross_seed_summary.csv,9,deadline_satisfaction_pct_ci95,float64,8,0,8,1.58893616738475,8.75008444534263,5.957821561589315,8,5.500539294458183 | 5.802138113911393 | 8.554683572926166 | 8.75008444534263 | 1.840702933540477 | 1.58893616738475 | 7.653006080382155 | 7.972481884768765
+09_service_class_cross_seed_summary.csv,10,mean_latency_ms_mean,float64,8,0,8,144.92189533064487,226.541459993384,166.41295150107953,8,146.51840530470875 | 146.8318023871989 | 147.18463883546724 | 147.5325726755003 | 226.541459993384 | 226.5280541064898 | 144.92189533064487 | 145.24478337524243
+09_service_class_cross_seed_summary.csv,11,mean_latency_ms_sd,float64,8,0,8,9.582310579439817,18.174397917748166,13.843813657358575,8,9.582310579439817 | 9.847982208497251 | 15.085613909550489 | 15.034048906661598 | 18.174397917748166 | 18.027699393753604 | 12.467944745215863 | 12.53051159800181
+09_service_class_cross_seed_summary.csv,12,mean_latency_ms_ci95,float64,8,0,8,23.80570029651965,45.15135116032701,34.39271521787912,8,23.80570029651965 | 24.465718475454445 | 37.47776703150458 | 37.34966212461542 | 45.15135116032701 | 44.78690241206274 | 30.97459150979924 | 31.130028732749885
+09_service_class_cross_seed_summary.csv,13,p95_latency_ms_mean,float64,8,0,8,446.6220562240608,490.3227768789641,460.36086458416696,8,451.34853968879696 | 453.8350769315153 | 450.7644569968441 | 452.7181569947572 | 488.1831826218429 | 490.3227768789641 | 446.6220562240608 | 449.092670336554
+09_service_class_cross_seed_summary.csv,14,p95_latency_ms_sd,float64,8,0,8,14.43819662188123,62.65097591770746,28.054795988424154,8,14.518578206138455 | 15.167201019032111 | 21.14516545260924 | 20.647908722677936 | 62.65097591770746 | 61.12662562515571 | 14.43819662188123 | 14.743716342191064
+09_service_class_cross_seed_summary.csv,15,p95_latency_ms_ci95,float64,8,0,8,35.869363527019026,155.64621326108227,69.69760160074782,8,36.069058568034784 | 37.68045700489641 | 52.53174245522779 | 51.29638856171372 | 155.64621326108227 | 151.85921158642765 | 35.869363527019026 | 36.62837784158089
+09_service_class_cross_seed_summary.csv,16,avg_qoe_mean,float64,8,0,8,0.6529795312812127,0.9171673347206536,0.7972035912760539,8,0.7040206320914217 | 0.9162741266799292 | 0.7018478291280408 | 0.915147416263782 | 0.6529795312812127 | 0.8634135666843633 | 0.706778293359028 | 0.9171673347206536
+09_service_class_cross_seed_summary.csv,17,avg_qoe_sd,float64,8,0,8,0.0058654550406568,0.0184977484108959,0.009976015797842349,8,0.0061202199481147 | 0.0058654550406568 | 0.0074926126163828 | 0.009078309409206 | 0.0184977484108959 | 0.0183682360886487 | 0.0074742813484335 | 0.0069112635204004
+09_service_class_cross_seed_summary.csv,18,avg_qoe_ci95,float64,8,0,8,0.0145717740667043,0.0459546631451341,0.024783797213413276,8,0.0152046962604418 | 0.0145717740667043 | 0.0186141838030425 | 0.0225535909322683 | 0.0459546631451341 | 0.0456329107345268 | 0.0185686427336691 | 0.0171699160315193
+10_neighbor_ablation_seed_metrics.csv,0,run_id,object,6,0,0,,,,6,ours__full__urban__bs4__u80__main__seed42 | ours__full__urban__bs4__u80__main__seed43 | ours__full__urban__bs4__u80__main__seed44 | ours__no_neighbor__urban__bs4__u80__ablation__seed42 | ours__no_neighbor__urban__bs4__u80__ablation__seed43 | ours__no_neighbor__urban__bs4__u80__ablation__seed44
+10_neighbor_ablation_seed_metrics.csv,1,algorithm,object,6,0,0,,,,1,Ours
+10_neighbor_ablation_seed_metrics.csv,2,method,object,6,0,0,,,,1,ours
+10_neighbor_ablation_seed_metrics.csv,3,seed,int64,6,0,6,42.0,44.0,43.0,3,42 | 43 | 44
+10_neighbor_ablation_seed_metrics.csv,4,experiment,object,6,0,0,,,,2,main | ablation
+10_neighbor_ablation_seed_metrics.csv,5,scenario,object,6,0,0,,,,1,urban
+10_neighbor_ablation_seed_metrics.csv,6,num_bs,int64,6,0,6,4.0,4.0,4.0,1,4
+10_neighbor_ablation_seed_metrics.csv,7,num_users,int64,6,0,6,80.0,80.0,80.0,1,80
+10_neighbor_ablation_seed_metrics.csv,8,throughput_Mbps,float64,6,0,6,196.56344275477232,197.41942741060683,197.2492899821015,6,196.56344275477232 | 197.41942741060683 | 197.4069564023332 | 197.2848343546112 | 197.41591915401816 | 197.4051598162672
+10_neighbor_ablation_seed_metrics.csv,9,mean_latency_ms,float64,6,0,6,135.96787916439916,159.82743558662582,144.92456895608527,6,159.25766390212044 | 135.96787916439916 | 139.81197429796046 | 159.82743558662582 | 136.09792108962682 | 138.58453969577886
+10_neighbor_ablation_seed_metrics.csv,10,p95_latency_ms,float64,6,0,6,434.7568907451393,463.4143652118784,446.8158526928717,6,463.20662687131374 | 434.7568907451393 | 443.8673312903707 | 463.4143652118784 | 435.0799412153131 | 440.56996082321496
+10_neighbor_ablation_seed_metrics.csv,11,deadline_satisfaction_pct,float64,6,0,6,48.2903125,54.0996875,51.99182291666667,6,48.404375 | 54.0996875 | 53.445625 | 48.2903125 | 54.071875 | 53.6390625
+10_neighbor_ablation_seed_metrics.csv,12,blocking_pct,float64,6,0,6,0.0,0.0,0.0,1,0.0
+10_neighbor_ablation_seed_metrics.csv,13,avg_qoe,float64,6,0,6,0.7576101484718881,0.7716521555084006,0.7660138413195531,6,0.7576101484718881 | 0.7716521555084006 | 0.7681938502931134 | 0.7577976149988108 | 0.7715297858169323 | 0.7692994928281734
+10_neighbor_ablation_seed_metrics.csv,14,fairness,float64,6,0,6,0.9685712940372366,0.9707533695113866,0.9697604013473021,6,0.968624391957878 | 0.970293234437276 | 0.9707533695113866 | 0.9685712940372366 | 0.9701855384829708 | 0.9701345796570656
+10_neighbor_ablation_seed_metrics.csv,15,energy_J_per_step,float64,6,0,6,449521.2877705887,500153.903660472,483562.03195627313,6,500153.903660472 | 499356.5220157214 | 449521.2877705887 | 491088.67814345215 | 497288.9443074334 | 463962.8558399709
+10_neighbor_ablation_seed_metrics.csv,16,walltime_ms_per_step,float64,6,0,6,15.633168816566467,16.059805393218994,15.834616204102835,6,16.059805393218994 | 15.918751180171968 | 15.72246503829956 | 15.886526465415956 | 15.78698033094406 | 15.633168816566467
+10_neighbor_ablation_seed_metrics.csv,17,mean_episode_return,float64,6,0,6,101.68534705900186,106.24959911370595,104.65912477828932,6,101.68534705900186 | 105.99069470774464 | 106.24959911370595 | 101.84620808330888 | 106.00196534627386 | 106.1809343597008
+10_neighbor_ablation_seed_metrics.csv,18,training_env_steps,int64,6,0,6,200000.0,200000.0,200000.0,1,200000
+10_neighbor_ablation_seed_metrics.csv,19,training_iterations,int64,6,0,6,200.0,200.0,200.0,1,200
+10_neighbor_ablation_seed_metrics.csv,20,training_walltime_s,float64,6,0,6,4568.820488214493,4641.41045665741,4597.7848759492235,6,4603.540713310242 | 4568.820488214493 | 4611.048085689545 | 4587.96589422226 | 4641.41045665741 | 4573.923617601395
+10_neighbor_ablation_seed_metrics.csv,21,algorithm_backend,object,6,0,0,,,,1,rllib_ppo
+10_neighbor_ablation_seed_metrics.csv,22,run_dir,object,6,0,0,,,,6,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__no_neighbor__urban__bs4__u80__ablation__seed44
+10_neighbor_ablation_seed_metrics.csv,23,ablation,object,6,0,0,,,,2,Full | No neighbor
+11_neighbor_ablation_summary.csv,0,ablation,object,2,0,0,,,,2,Full | No neighbor
+11_neighbor_ablation_summary.csv,1,n_seeds,int64,2,0,2,3.0,3.0,3.0,1,3
+11_neighbor_ablation_summary.csv,2,num_bs_mean,float64,2,0,2,4.0,4.0,4.0,1,4.0
+11_neighbor_ablation_summary.csv,3,num_bs_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,4,num_bs_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,5,num_bs_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,6,num_users_mean,float64,2,0,2,80.0,80.0,80.0,1,80.0
+11_neighbor_ablation_summary.csv,7,num_users_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,8,num_users_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,9,num_users_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,10,throughput_Mbps_mean,float64,2,0,2,197.12994218923745,197.3686377749655,197.24928998210146,2,197.12994218923745 | 197.3686377749655
+11_neighbor_ablation_summary.csv,11,throughput_Mbps_sd,float64,2,0,2,0.0727750010959821,0.4906425261316262,0.28170876361380415,2,0.4906425261316262 | 0.0727750010959821
+11_neighbor_ablation_summary.csv,12,throughput_Mbps_sem,float64,2,0,2,0.0420166664730405,0.2832725945379724,0.16264463050550643,2,0.2832725945379724 | 0.0420166664730405
+11_neighbor_ablation_summary.csv,13,throughput_Mbps_ci95,float64,2,0,2,0.1807977158334936,1.218921974296895,0.6998598450651944,2,1.218921974296895 | 0.1807977158334936
+11_neighbor_ablation_summary.csv,14,mean_latency_ms_mean,float64,2,0,2,144.8366321240105,145.01250578816004,144.92456895608527,2,145.01250578816004 | 144.8366321240105
+11_neighbor_ablation_summary.csv,15,mean_latency_ms_sd,float64,2,0,2,12.485498152567509,13.041815800117138,12.763656976342324,2,12.485498152567509 | 13.041815800117138
+11_neighbor_ablation_summary.csv,16,mean_latency_ms_sem,float64,2,0,2,7.208505719351427,7.529695862919145,7.369100791135287,2,7.208505719351427 | 7.529695862919145
+11_neighbor_ablation_summary.csv,17,mean_latency_ms_ci95,float64,2,0,2,31.01820011036919,32.40028129814108,31.709240704255137,2,31.01820011036919 | 32.40028129814108
+11_neighbor_ablation_summary.csv,18,p95_latency_ms_mean,float64,2,0,2,446.3547557501354,447.27694963560793,446.81585269287166,2,447.27694963560793 | 446.3547557501354
+11_neighbor_ablation_summary.csv,19,p95_latency_ms_sd,float64,2,0,2,14.528110488200884,15.026902044805448,14.777506266503167,2,14.528110488200884 | 15.026902044805448
+11_neighbor_ablation_summary.csv,20,p95_latency_ms_sem,float64,2,0,2,8.387808501179407,8.675785940654563,8.531797220916985,2,8.387808501179407 | 8.675785940654563
+11_neighbor_ablation_summary.csv,21,p95_latency_ms_ci95,float64,2,0,2,36.09273998057499,37.33190690263658,36.71232344160579,2,36.09273998057499 | 37.33190690263658
+11_neighbor_ablation_summary.csv,22,deadline_satisfaction_pct_mean,float64,2,0,2,51.98322916666667,52.000416666666666,51.99182291666666,2,51.98322916666667 | 52.000416666666666
+11_neighbor_ablation_summary.csv,23,deadline_satisfaction_pct_sd,float64,2,0,2,3.1165842356941167,3.2203239527533696,3.168454094223743,2,3.1165842356941167 | 3.2203239527533696
+11_neighbor_ablation_summary.csv,24,deadline_satisfaction_pct_sem,float64,2,0,2,1.7993607474301423,1.8592549009999575,1.82930782421505,2,1.7993607474301423 | 1.8592549009999575
+11_neighbor_ablation_summary.csv,25,deadline_satisfaction_pct_ci95,float64,2,0,2,7.742649296191903,8.000373839002817,7.87151156759736,2,7.742649296191903 | 8.000373839002817
+11_neighbor_ablation_summary.csv,26,blocking_pct_mean,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,27,blocking_pct_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,28,blocking_pct_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,29,blocking_pct_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,30,avg_qoe_mean,float64,2,0,2,0.765818718091134,0.7662089645479723,0.7660138413195532,2,0.765818718091134 | 0.7662089645479723
+11_neighbor_ablation_summary.csv,31,avg_qoe_sd,float64,2,0,2,0.0073161075809494,0.0073693047591044,0.0073427061700269,2,0.0073161075809494 | 0.0073693047591044
+11_neighbor_ablation_summary.csv,32,avg_qoe_sem,float64,2,0,2,0.0042239566812814,0.0042546700864093,0.00423931338384535,2,0.0042239566812814 | 0.0042546700864093
+11_neighbor_ablation_summary.csv,33,avg_qoe_ci95,float64,2,0,2,0.0181756855995539,0.0183078453818194,0.01824176549068665,2,0.0181756855995539 | 0.0183078453818194
+11_neighbor_ablation_summary.csv,34,fairness_mean,float64,2,0,2,0.9696304707257578,0.9698903319688468,0.9697604013473022,2,0.9698903319688468 | 0.9696304707257578
+11_neighbor_ablation_summary.csv,35,fairness_sd,float64,2,0,2,0.0009176277260492,0.0011202161198338,0.0010189219229415,2,0.0011202161198338 | 0.0009176277260492
+11_neighbor_ablation_summary.csv,36,fairness_sem,float64,2,0,2,0.0005297926146503,0.0006467570783366,0.00058827484649345,2,0.0006467570783366 | 0.0005297926146503
+11_neighbor_ablation_summary.csv,37,fairness_ci95,float64,2,0,2,0.0022796976208405,0.0027829957080825,0.0025313466644615,2,0.0027829957080825 | 0.0022796976208405
+11_neighbor_ablation_summary.csv,38,energy_J_per_step_mean,float64,2,0,2,483010.5711489274,484113.4927636189,483562.03195627313,2,483010.5711489274 | 484113.4927636189
+11_neighbor_ablation_summary.csv,39,energy_J_per_step_sd,float64,2,0,2,17724.19113662353,29005.31038047773,23364.750758550632,2,29005.31038047773 | 17724.19113662353
+11_neighbor_ablation_summary.csv,40,energy_J_per_step_sem,float64,2,0,2,10233.066523897976,16746.223756097468,13489.645139997723,2,16746.223756097468 | 10233.066523897976
+11_neighbor_ablation_summary.csv,41,energy_J_per_step_ci95,float64,2,0,2,44032.88525233298,72059.0008224874,58045.943037410194,2,72059.0008224874 | 44032.88525233298
+11_neighbor_ablation_summary.csv,42,walltime_ms_per_step_mean,float64,2,0,2,15.768891870975494,15.900340537230171,15.834616204102833,2,15.900340537230171 | 15.768891870975494
+11_neighbor_ablation_summary.csv,43,walltime_ms_per_step_sd,float64,2,0,2,0.1276437183948393,0.1694220841402915,0.1485329012675654,2,0.1694220841402915 | 0.1276437183948393
+11_neighbor_ablation_summary.csv,44,walltime_ms_per_step_sem,float64,2,0,2,0.0736951351756252,0.0978158858850647,0.08575551053034494,2,0.0978158858850647 | 0.0736951351756252
+11_neighbor_ablation_summary.csv,45,walltime_ms_per_step_ci95,float64,2,0,2,0.3171101666607155,0.4209017569634337,0.36900596181207457,2,0.4209017569634337 | 0.3171101666607155
+11_neighbor_ablation_summary.csv,46,mean_episode_return_mean,float64,2,0,2,104.64188029348414,104.67636926309451,104.65912477828932,2,104.64188029348414 | 104.67636926309451
+11_neighbor_ablation_summary.csv,47,mean_episode_return_sd,float64,2,0,2,2.45262445242152,2.56370326828307,2.508163860352295,2,2.56370326828307 | 2.45262445242152
+11_neighbor_ablation_summary.csv,48,mean_episode_return_sem,float64,2,0,2,1.416023387826623,1.480154772065554,1.4480890799460884,2,1.480154772065554 | 1.416023387826623
+11_neighbor_ablation_summary.csv,49,mean_episode_return_ci95,float64,2,0,2,6.093148637817959,6.369105984198078,6.231127311008018,2,6.369105984198078 | 6.093148637817959
+11_neighbor_ablation_summary.csv,50,training_env_steps_mean,float64,2,0,2,200000.0,200000.0,200000.0,1,200000.0
+11_neighbor_ablation_summary.csv,51,training_env_steps_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,52,training_env_steps_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,53,training_env_steps_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,54,training_iterations_mean,float64,2,0,2,200.0,200.0,200.0,1,200.0
+11_neighbor_ablation_summary.csv,55,training_iterations_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,56,training_iterations_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,57,training_iterations_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+11_neighbor_ablation_summary.csv,58,training_walltime_s_mean,float64,2,0,2,4594.469762404759,4601.099989493688,4597.7848759492235,2,4594.469762404759 | 4601.099989493688
+11_neighbor_ablation_summary.csv,59,training_walltime_s_sd,float64,2,0,2,22.527851869985295,35.608941368599055,29.068396619292173,2,22.527851869985295 | 35.608941368599055
+11_neighbor_ablation_summary.csv,60,training_walltime_s_sem,float64,2,0,2,13.006461341400026,20.558831884718263,16.782646613059143,2,13.006461341400026 | 20.558831884718263
+11_neighbor_ablation_summary.csv,61,training_walltime_s_ci95,float64,2,0,2,55.96680315204432,88.4646535999427,72.2157283759935,2,55.96680315204432 | 88.4646535999427
+12_mobility_seed_metrics.csv,0,run_id,object,9,0,0,,,,9,ours__full__urban__bs4__u80__main__seed42 | ours__full__urban__bs4__u80__main__seed43 | ours__full__urban__bs4__u80__main__seed44 | ours__full__highway__bs4__u80__mobility__seed42 | ours__full__highway__bs4__u80__mobility__seed43 | ours__full__highway__bs4__u80__mobility__seed44 | ours__full__mixed__bs4__u80__mobility__seed42 | ours__full__mixed__bs4__u80__mobility__seed43
+12_mobility_seed_metrics.csv,1,algorithm,object,9,0,0,,,,1,Ours
+12_mobility_seed_metrics.csv,2,method,object,9,0,0,,,,1,ours
+12_mobility_seed_metrics.csv,3,seed,int64,9,0,9,42.0,44.0,43.0,3,42 | 43 | 44
+12_mobility_seed_metrics.csv,4,experiment,object,9,0,0,,,,2,main | mobility
+12_mobility_seed_metrics.csv,5,scenario,object,9,0,0,,,,3,urban | highway | mixed
+12_mobility_seed_metrics.csv,6,num_bs,int64,9,0,9,4.0,4.0,4.0,1,4
+12_mobility_seed_metrics.csv,7,num_users,int64,9,0,9,80.0,80.0,80.0,1,80
+12_mobility_seed_metrics.csv,8,throughput_Mbps,float64,9,0,9,188.1015350172894,197.41942741060683,192.50650827849483,9,196.56344275477232 | 197.41942741060683 | 197.4069564023332 | 188.1015350172894 | 188.1150781881041 | 188.11792255415017 | 192.2955200933069 | 192.2645613877115
+12_mobility_seed_metrics.csv,9,mean_latency_ms,float64,9,0,9,135.76248380448317,159.25766390212044,144.20030718230248,9,159.25766390212044 | 135.96787916439916 | 139.81197429796046 | 159.24772285112596 | 137.1421134324707 | 135.91100259835022 | 158.7528932413823 | 135.9490313484296
+12_mobility_seed_metrics.csv,10,p95_latency_ms,float64,9,0,9,432.3899872561652,463.20662687131374,444.31353361598974,9,463.20662687131374 | 434.7568907451393 | 443.8673312903707 | 461.36308838338624 | 436.5037268440396 | 434.4263966330109 | 459.6349318942081 | 432.67282262627407
+12_mobility_seed_metrics.csv,11,deadline_satisfaction_pct,float64,9,0,9,48.3540625,54.13,52.099513888888886,9,48.404375 | 54.0996875 | 53.445625 | 48.3540625 | 53.87875 | 54.13 | 48.4375 | 54.0553125
+12_mobility_seed_metrics.csv,12,blocking_pct,float64,9,0,9,0.0,0.00125,0.0001388888888888889,2,0.0 | 0.00125
+12_mobility_seed_metrics.csv,13,avg_qoe,float64,9,0,9,0.7576101484718881,0.7737281565010727,0.7674854099864712,9,0.7576101484718881 | 0.7716521555084006 | 0.7681938502931134 | 0.7587798939092386 | 0.77098076525273 | 0.7720740098255685 | 0.7607510558397006 | 0.7735986542765287
+12_mobility_seed_metrics.csv,14,fairness,float64,9,0,9,0.968624391957878,0.9741496727428122,0.9722999932770056,9,0.968624391957878 | 0.970293234437276 | 0.9707533695113866 | 0.9733673434321602 | 0.9736346997839856 | 0.9740204762439104 | 0.9722665849398372 | 0.9741496727428122
+12_mobility_seed_metrics.csv,15,energy_J_per_step,float64,9,0,9,449521.2877705887,500159.9996540535,491123.8936970714,9,500153.903660472 | 499356.5220157214 | 449521.2877705887 | 493932.44470778 | 479705.6876631739 | 499252.86835012975 | 500159.9996540535 | 498985.5580583615
+12_mobility_seed_metrics.csv,16,walltime_ms_per_step,float64,9,0,9,15.677521824836733,16.385360777378082,15.941475563579136,9,16.059805393218994 | 15.918751180171968 | 15.72246503829956 | 16.385360777378082 | 15.967096030712128 | 15.9960058927536 | 16.001085877418518 | 15.745188057422638
+12_mobility_seed_metrics.csv,17,mean_episode_return,float64,9,0,9,101.32485944703431,106.24959911370595,104.38847970260092,9,101.68534705900186 | 105.99069470774464 | 106.24959911370595 | 101.32485944703431 | 105.54243104193006 | 105.4126035871246 | 101.68008344532926 | 105.79481811179453
+12_mobility_seed_metrics.csv,18,training_env_steps,int64,9,0,9,200000.0,200000.0,200000.0,1,200000
+12_mobility_seed_metrics.csv,19,training_iterations,int64,9,0,9,200.0,200.0,200.0,1,200
+12_mobility_seed_metrics.csv,20,training_walltime_s,float64,9,0,9,4507.419287443161,4640.510082960129,4579.314753770828,9,4603.540713310242 | 4568.820488214493 | 4611.048085689545 | 4612.525944232941 | 4564.511243343353 | 4507.419287443161 | 4640.510082960129 | 4572.859983205795
+12_mobility_seed_metrics.csv,21,algorithm_backend,object,9,0,0,,,,1,rllib_ppo
+12_mobility_seed_metrics.csv,22,run_dir,object,9,0,0,,,,9,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__highway__bs4__u80__mobility__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__highway__bs4__u80__mobility__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__highway__bs4__u80__mobility__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__mixed__bs4__u80__mobility__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__mixed__bs4__u80__mobility__seed43
+12_mobility_seed_metrics.csv,23,mobility,object,9,0,0,,,,3,Urban | Highway | Mixed
+13_mobility_summary.csv,0,mobility,object,3,0,0,,,,3,Urban | Highway | Mixed
+13_mobility_summary.csv,1,n_seeds,int64,3,0,3,3.0,3.0,3.0,1,3
+13_mobility_summary.csv,2,num_bs_mean,float64,3,0,3,4.0,4.0,4.0,1,4.0
+13_mobility_summary.csv,3,num_bs_sd,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,4,num_bs_sem,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,5,num_bs_ci95,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,6,num_users_mean,float64,3,0,3,80.0,80.0,80.0,1,80.0
+13_mobility_summary.csv,7,num_users_sd,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,8,num_users_sem,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,9,num_users_ci95,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,10,throughput_Mbps_mean,float64,3,0,3,188.11151191984789,197.12994218923745,192.50650827849486,3,197.12994218923745 | 188.11151191984789 | 192.27807072639925
+13_mobility_summary.csv,11,throughput_Mbps_sd,float64,3,0,3,0.0087565143206215,0.4906425261316262,0.1717500032724795,3,0.4906425261316262 | 0.0087565143206215 | 0.0158509693651908
+13_mobility_summary.csv,12,throughput_Mbps_sem,float64,3,0,3,0.0050555759001736,0.2832725945379724,0.09915991062268513,3,0.2832725945379724 | 0.0050555759001736 | 0.0091515614299094
+13_mobility_summary.csv,13,throughput_Mbps_ci95,float64,3,0,3,0.0217541430984473,1.218921974296895,0.4266850954094142,3,1.218921974296895 | 0.0217541430984473 | 0.0393791688329002
+13_mobility_summary.csv,14,mean_latency_ms_mean,float64,3,0,3,143.4881361314317,145.01250578816004,144.20030718230245,3,145.01250578816004 | 144.10027962731564 | 143.4881361314317
+13_mobility_summary.csv,15,mean_latency_ms_sd,float64,3,0,3,12.485498152567509,13.21999649076652,12.945999856495137,3,12.485498152567509 | 13.132504926151384 | 13.21999649076652
+13_mobility_summary.csv,16,mean_latency_ms_sem,float64,3,0,3,7.208505719351427,7.632568532629958,7.474376502076325,3,7.208505719351427 | 7.582055254247589 | 7.632568532629958
+13_mobility_summary.csv,17,mean_latency_ms_ci95,float64,3,0,3,31.01820011036919,32.84294239590671,32.162242088434425,3,31.01820011036919 | 32.62558375902737 | 32.84294239590671
+13_mobility_summary.csv,18,p95_latency_ms_mean,float64,3,0,3,441.5659139255492,447.27694963560793,444.3135336159898,3,447.27694963560793 | 444.0977372868122 | 441.5659139255492
+13_mobility_summary.csv,19,p95_latency_ms_sd,float64,3,0,3,14.528110488200884,15.648867586040732,15.055081012039096,3,14.528110488200884 | 14.988264961875672 | 15.648867586040732
+13_mobility_summary.csv,20,p95_latency_ms_sem,float64,3,0,3,8.387808501179407,9.034877913313426,8.692055074972396,3,8.387808501179407 | 8.653478810424357 | 9.034877913313426
+13_mobility_summary.csv,21,p95_latency_ms_ci95,float64,3,0,3,36.09273998057499,38.87707966098768,37.40191298760623,3,36.09273998057499 | 37.235919321256006 | 38.87707966098768
+13_mobility_summary.csv,22,deadline_satisfaction_pct_mean,float64,3,0,3,51.98322916666667,52.194375,52.099513888888886,3,51.98322916666667 | 52.1209375 | 52.194375
+13_mobility_summary.csv,23,deadline_satisfaction_pct_sd,float64,3,0,3,3.1165842356941167,3.264627404443539,3.2116026308759764,3,3.1165842356941167 | 3.264627404443539 | 3.253596252490274
+13_mobility_summary.csv,24,deadline_satisfaction_pct_sem,float64,3,0,3,1.7993607474301423,1.8848335107593064,1.8542196434663554,3,1.7993607474301423 | 1.8848335107593064 | 1.8784646722096172
+13_mobility_summary.csv,25,deadline_satisfaction_pct_ci95,float64,3,0,3,7.742649296191903,8.110438596797296,7.9787071258357285,3,7.742649296191903 | 8.110438596797296 | 8.083033484517983
+13_mobility_summary.csv,26,blocking_pct_mean,float64,3,0,3,0.0,0.0004166666666666,0.00013888888888886666,2,0.0 | 0.0004166666666666
+13_mobility_summary.csv,27,blocking_pct_sd,float64,3,0,3,0.0,0.000721687836487,0.00024056261216233335,2,0.0 | 0.000721687836487
+13_mobility_summary.csv,28,blocking_pct_sem,float64,3,0,3,0.0,0.0004166666666666,0.00013888888888886666,2,0.0 | 0.0004166666666666
+13_mobility_summary.csv,29,blocking_pct_ci95,float64,3,0,3,0.0,0.0017929166666666,0.0005976388888888666,2,0.0 | 0.0017929166666666
+13_mobility_summary.csv,30,avg_qoe_mean,float64,3,0,3,0.765818718091134,0.7693592888724341,0.7674854099864712,3,0.765818718091134 | 0.7672782229958456 | 0.7693592888724341
+13_mobility_summary.csv,31,avg_qoe_sd,float64,3,0,3,0.0073161075809494,0.0074552296856584,0.007383792500580967,3,0.0073161075809494 | 0.0073800402351351 | 0.0074552296856584
+13_mobility_summary.csv,32,avg_qoe_sem,float64,3,0,3,0.0042239566812814,0.0043042788658853,0.004263034587850733,3,0.0042239566812814 | 0.0042608682163855 | 0.0043042788658853
+13_mobility_summary.csv,33,avg_qoe_ci95,float64,3,0,3,0.0181756855995539,0.0185213119599048,0.018343837831521933,3,0.0181756855995539 | 0.0183345159351071 | 0.0185213119599048
+13_mobility_summary.csv,34,fairness_mean,float64,3,0,3,0.9698903319688468,0.973674173153352,0.9722999932770054,3,0.9698903319688468 | 0.973674173153352 | 0.9733354747088176
+13_mobility_summary.csv,35,fairness_sd,float64,3,0,3,0.0003283507691677,0.0011202161198338,0.0008052004809489333,3,0.0011202161198338 | 0.0003283507691677 | 0.0009670345538453
+13_mobility_summary.csv,36,fairness_sem,float64,3,0,3,0.0001895734049675,0.0006467570783366,0.0004648827144274334,3,0.0006467570783366 | 0.0001895734049675 | 0.0005583176599782
+13_mobility_summary.csv,37,fairness_ci95,float64,3,0,3,0.0008157343615755,0.0027829957080825,0.0020003903201815,3,0.0027829957080825 | 0.0008157343615755 | 0.0024024408908865
+13_mobility_summary.csv,38,energy_J_per_step_mean,float64,3,0,3,483010.5711489274,499397.4430352591,491123.8936970714,3,483010.5711489274 | 490963.6669070279 | 499397.4430352591
+13_mobility_summary.csv,39,energy_J_per_step_sd,float64,3,0,3,661.1022732874925,29005.31038047773,13257.504914115125,3,29005.31038047773 | 10106.102088580152 | 661.1022732874925
+13_mobility_summary.csv,40,energy_J_per_step_sem,float64,3,0,3,381.68757544440734,16746.223756097468,7654.224030947155,3,16746.223756097468 | 5834.76076129959 | 381.68757544440734
+13_mobility_summary.csv,41,energy_J_per_step_ci95,float64,3,0,3,1642.4016371372848,72059.0008224874,32936.126005165606,3,72059.0008224874 | 25106.975555872134 | 1642.4016371372848
+13_mobility_summary.csv,42,walltime_ms_per_step_mean,float64,3,0,3,15.80793191989263,16.116154233614605,15.941475563579134,3,15.900340537230171 | 16.116154233614605 | 15.80793191989263
+13_mobility_summary.csv,43,walltime_ms_per_step_sd,float64,3,0,3,0.1694220841402915,0.2335873871479852,0.19122431205040855,3,0.1694220841402915 | 0.2335873871479852 | 0.1706634648629489
+13_mobility_summary.csv,44,walltime_ms_per_step_sem,float64,3,0,3,0.0978158858850647,0.1348617408491906,0.11040340803790437,3,0.0978158858850647 | 0.1348617408491906 | 0.0985325973794578
+13_mobility_summary.csv,45,walltime_ms_per_step_ci95,float64,3,0,3,0.4209017569634337,0.5803100708740673,0.4750658647871026,3,0.4209017569634337 | 0.5803100708740673 | 0.423985766523807
+13_mobility_summary.csv,46,mean_episode_return_mean,float64,3,0,3,104.09329802536298,104.64188029348414,104.38847970260092,3,104.64188029348414 | 104.09329802536298 | 104.4302607889556
+13_mobility_summary.csv,47,mean_episode_return_sd,float64,3,0,3,2.3817467277940985,2.56370326828307,2.447955582498856,3,2.56370326828307 | 2.3984167514194 | 2.3817467277940985
+13_mobility_summary.csv,48,mean_episode_return_sem,float64,3,0,3,1.3751021144334332,1.480154772065554,1.4133278145199617,3,1.480154772065554 | 1.3847265570608982 | 1.3751021144334332
+13_mobility_summary.csv,49,mean_episode_return_ci95,float64,3,0,3,5.917064398407063,6.369105984198078,6.081549585879395,3,6.369105984198078 | 5.958478375033045 | 5.917064398407063
+13_mobility_summary.csv,50,training_env_steps_mean,float64,3,0,3,200000.0,200000.0,200000.0,1,200000.0
+13_mobility_summary.csv,51,training_env_steps_sd,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,52,training_env_steps_sem,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,53,training_env_steps_ci95,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,54,training_iterations_mean,float64,3,0,3,200.0,200.0,200.0,1,200.0
+13_mobility_summary.csv,55,training_iterations_sd,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,56,training_iterations_sem,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,57,training_iterations_ci95,float64,3,0,3,0.0,0.0,0.0,1,0.0
+13_mobility_summary.csv,58,training_walltime_s_mean,float64,3,0,3,4561.485491673152,4594.469762404759,4579.314753770828,3,4594.469762404759 | 4561.485491673152 | 4581.989007234573
+13_mobility_summary.csv,59,training_walltime_s_sd,float64,3,0,3,22.527851869985295,54.53269732285083,43.22638825667008,3,22.527851869985295 | 52.6186155771741 | 54.53269732285083
+13_mobility_summary.csv,60,training_walltime_s_sem,float64,3,0,3,13.006461341400026,31.484467478984318,24.95676689608375,3,13.006461341400026 | 30.379371867866908 | 31.484467478984318
+13_mobility_summary.csv,61,training_walltime_s_ci95,float64,3,0,3,55.96680315204432,135.4776635620695,107.38896795384836,3,55.96680315204432 | 130.7224371474313 | 135.4776635620695
+14_user_load_seed_metrics.csv,0,run_id,object,18,0,0,,,,18,ours__full__urban__bs4__u20__user_load__seed42 | ours__full__urban__bs4__u20__user_load__seed43 | ours__full__urban__bs4__u20__user_load__seed44 | ours__full__urban__bs4__u40__user_load__seed42 | ours__full__urban__bs4__u40__user_load__seed43 | ours__full__urban__bs4__u40__user_load__seed44 | ours__full__urban__bs4__u60__user_load__seed42 | ours__full__urban__bs4__u60__user_load__seed43
+14_user_load_seed_metrics.csv,1,algorithm,object,18,0,0,,,,1,Ours
+14_user_load_seed_metrics.csv,2,method,object,18,0,0,,,,1,ours
+14_user_load_seed_metrics.csv,3,seed,int64,18,0,18,42.0,44.0,43.0,3,42 | 43 | 44
+14_user_load_seed_metrics.csv,4,experiment,object,18,0,0,,,,2,user_load | main
+14_user_load_seed_metrics.csv,5,scenario,object,18,0,0,,,,1,urban
+14_user_load_seed_metrics.csv,6,num_bs,int64,18,0,18,4.0,4.0,4.0,1,4
+14_user_load_seed_metrics.csv,7,num_users,int64,18,0,18,20.0,120.0,70.0,6,20 | 40 | 60 | 80 | 100 | 120
+14_user_load_seed_metrics.csv,8,throughput_Mbps,float64,18,0,18,54.108540121296286,283.1942665444148,171.50156778714597,18,54.19508185441023 | 54.108540121296286 | 54.20796757082058 | 102.2845618855072 | 103.28423678024056 | 103.08066755145391 | 151.87894247064645 | 151.9638847210328
+14_user_load_seed_metrics.csv,9,mean_latency_ms,float64,18,0,18,56.6431545038429,192.4496775738927,127.64258590456683,18,56.942635263535486 | 56.6431545038429 | 56.960182809695645 | 90.56995444149082 | 78.79316463678379 | 79.69868766383127 | 123.97658702006257 | 115.24046895236006
+14_user_load_seed_metrics.csv,10,p95_latency_ms,float64,18,0,18,156.76785833903153,615.1386429246027,391.84210398812615,18,157.7103980968634 | 156.76785833903153 | 157.05957471401567 | 258.63879989633665 | 246.68822798037817 | 248.74506359247565 | 357.1030774960637 | 347.7169592072818
+14_user_load_seed_metrics.csv,11,deadline_satisfaction_pct,float64,18,0,18,44.454,80.46875,58.57334837962963,18,80.3 | 80.46875 | 80.22 | 62.965625 | 67.00875 | 66.58375 | 54.17041666666667 | 56.6625
+14_user_load_seed_metrics.csv,12,blocking_pct,float64,18,0,18,0.0,0.0,0.0,1,0.0
+14_user_load_seed_metrics.csv,13,avg_qoe,float64,18,0,18,0.7170276795934573,0.8531804251612084,0.7838590729458859,18,0.853077137400954 | 0.8529333186869027 | 0.8531804251612084 | 0.8293306815025268 | 0.8354867549293038 | 0.8345094479951729 | 0.7921006215006516 | 0.7965322806354077
+14_user_load_seed_metrics.csv,14,fairness,float64,18,0,18,0.9136425013389684,0.9854082746412848,0.9625250250522872,18,0.9136425013389684 | 0.9149044938292498 | 0.9160778405640864 | 0.9552128145992158 | 0.9515921647287516 | 0.9508194472931882 | 0.9711291930025908 | 0.9710871651784428
+14_user_load_seed_metrics.csv,15,energy_J_per_step,float64,18,0,18,449521.2877705887,500160.0,491532.1383585709,17,476068.09161270375 | 481955.61596359656 | 464576.0359122033 | 497640.3954531316 | 500019.6290518637 | 477582.6201874364 | 500139.7752658549 | 500030.4604673437
+14_user_load_seed_metrics.csv,16,walltime_ms_per_step,float64,18,0,18,5.758032381534576,22.03613418340683,14.006081253290176,18,5.784134209156036 | 5.777594745159149 | 5.758032381534576 | 9.130145490169523 | 8.882798671722412 | 8.904469728469849 | 12.411024510860443 | 12.28967970609665
+14_user_load_seed_metrics.csv,17,mean_episode_return,float64,18,0,18,95.68368111720665,127.94622474207236,109.40430805095899,18,127.6839865978523 | 127.63547593759748 | 127.94622474207236 | 116.94911995574242 | 119.32072717829084 | 119.44509717843616 | 109.07793151400256 | 110.69740288914728
+14_user_load_seed_metrics.csv,18,training_env_steps,int64,18,0,18,200000.0,200000.0,200000.0,1,200000
+14_user_load_seed_metrics.csv,19,training_iterations,int64,18,0,18,200.0,200.0,200.0,1,200
+14_user_load_seed_metrics.csv,20,training_walltime_s,float64,18,0,18,2231.0208444595337,6135.625990390778,4176.17690955268,18,2231.0208444595337 | 2241.697264432907 | 2236.9089901447296 | 3025.14883184433 | 3106.7342054843903 | 3017.645105600357 | 3776.59042263031 | 3810.552417516709
+14_user_load_seed_metrics.csv,21,algorithm_backend,object,18,0,0,,,,1,rllib_ppo
+14_user_load_seed_metrics.csv,22,run_dir,object,18,0,0,,,,18,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u20__user_load__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u20__user_load__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u20__user_load__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u40__user_load__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u40__user_load__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u40__user_load__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u60__user_load__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u60__user_load__seed43
+14_user_load_seed_metrics.csv,23,users_per_bs,float64,18,0,18,5.0,30.0,17.5,6,5.0 | 10.0 | 15.0 | 20.0 | 25.0 | 30.0
+15_user_load_summary.csv,0,num_users,int64,6,0,6,20.0,120.0,70.0,6,20 | 40 | 60 | 80 | 100 | 120
+15_user_load_summary.csv,1,num_bs,int64,6,0,6,4.0,4.0,4.0,1,4
+15_user_load_summary.csv,2,users_per_bs,float64,6,0,6,5.0,30.0,17.5,6,5.0 | 10.0 | 15.0 | 20.0 | 25.0 | 30.0
+15_user_load_summary.csv,3,n_seeds,int64,6,0,6,3.0,3.0,3.0,1,3
+15_user_load_summary.csv,4,throughput_Mbps_mean,float64,6,0,6,54.17052984884237,282.49014112427176,171.50156778714597,6,54.17052984884237 | 102.88315540573387 | 151.92735834673053 | 197.12994218923745 | 240.40827980805992 | 282.49014112427176
+15_user_load_summary.csv,5,throughput_Mbps_sd,float64,6,0,6,0.0437014492281241,1.110262133935832,0.42898468454171973,6,0.0540699099572011 | 0.52829514437503 | 0.0437014492281241 | 0.4906425261316262 | 0.3469369436225046 | 1.110262133935832
+15_user_load_summary.csv,6,throughput_Mbps_sem,float64,6,0,6,0.0252310434758342,0.641010141898901,0.24767442309838858,6,0.0312172770688489 | 0.3050113438164958 | 0.0252310434758342 | 0.2832725945379724 | 0.2003041377922791 | 0.641010141898901
+15_user_load_summary.csv,7,throughput_Mbps_ci95,float64,6,0,6,0.1085691800765147,2.7582666405909717,1.0657430425923662,6,0.1343279432272569 | 1.3124638124423815 | 0.1085691800765147 | 1.218921974296895 | 0.8619087049201769 | 2.7582666405909717
+15_user_load_summary.csv,8,mean_latency_ms_mean,float64,6,0,6,56.848657525691344,192.2527645994212,127.64258590456683,6,56.848657525691344 | 83.02060224736863 | 115.303301633286 | 145.01250578816004 | 173.41768363347376 | 192.2527645994212
+15_user_load_summary.csv,9,mean_latency_ms_sd,float64,6,0,6,0.1773130164622899,15.866066209517522,7.317115658509459,6,0.1781869750730733 | 6.553589238066538 | 8.642040359369824 | 12.485498152567509 | 15.866066209517522 | 0.1773130164622899
+15_user_load_summary.csv,10,mean_latency_ms_sem,float64,6,0,6,0.1023717177853276,9.160277597045368,4.224538695132062,6,0.102876298024524 | 3.78371651075595 | 4.9894843278297785 | 7.208505719351427 | 9.160277597045368 | 0.1023717177853276
+15_user_load_summary.csv,11,mean_latency_ms_ci95,float64,6,0,6,0.4405055016302649,39.41667450008621,18.178190005153265,6,0.4426767103995268 | 16.28133214578285 | 21.469751062651536 | 31.01820011036919 | 39.41667450008621 | 0.4405055016302649
+15_user_load_summary.csv,12,p95_latency_ms_mean,float64,6,0,6,157.1792770499702,613.8521663868532,391.84210398812615,6,157.1792770499702 | 251.35736382306348 | 347.71856139153425 | 447.27694963560793 | 533.6683056417277 | 613.8521663868532
+15_user_load_summary.csv,13,p95_latency_ms_sd,float64,6,0,6,0.4825368231525625,16.245663938664144,8.025972856256342,6,0.4825368231525625 | 6.389219565069809 | 9.383715114987584 | 14.528110488200884 | 16.245663938664144 | 1.1265912074630653
+15_user_load_summary.csv,14,p95_latency_ms_sem,float64,6,0,6,0.2785927647410388,9.37943844815194,4.633797589068229,6,0.2785927647410388 | 3.6888176358046794 | 5.417690447636843 | 8.387808501179407 | 9.37943844815194 | 0.6504377368954664
+15_user_load_summary.csv,15,p95_latency_ms_ci95,float64,6,0,6,1.19878466668069,40.3597236423978,19.939231025760588,6,1.19878466668069 | 15.872982286867533 | 23.31232199618133 | 36.09273998057499 | 40.3597236423978 | 2.798833581861192
+15_user_load_summary.csv,16,deadline_satisfaction_pct_mean,float64,6,0,6,48.327152777777776,80.32958333333333,58.57334837962963,6,80.32958333333333 | 65.51937500000001 | 56.630833333333335 | 51.98322916666667 | 48.64991666666666 | 48.327152777777776
+15_user_load_summary.csv,17,deadline_satisfaction_pct_sd,float64,6,0,6,0.0219298254751449,3.633771046837339,1.9276343972289343,6,0.1269863017546914 | 2.221797818631344 | 2.44473715498097 | 3.1165842356941167 | 3.633771046837339 | 0.0219298254751449
+15_user_load_summary.csv,18,deadline_satisfaction_pct_sem,float64,6,0,6,0.0126611906413564,2.097958692065006,1.1129202381393073,6,0.0733155755014661 | 1.2827555686717296 | 1.4114696545261431 | 1.7993607474301423 | 2.097958692065006 | 0.0126611906413564
+15_user_load_summary.csv,19,deadline_satisfaction_pct_ci95,float64,6,0,6,0.0544811033297567,9.02751625195572,4.788895784713439,6,0.3154769213828088 | 5.519697211994452 | 6.073553923425994 | 7.742649296191903 | 9.02751625195572 | 0.0544811033297567
+15_user_load_summary.csv,20,blocking_pct_mean,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,21,blocking_pct_sd,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,22,blocking_pct_sem,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,23,blocking_pct_ci95,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,24,avg_qoe_mean,float64,6,0,6,0.7178904562595934,0.8530636270830217,0.783859072945886,6,0.8530636270830217 | 0.8331089614756678 | 0.7964502908191325 | 0.765818718091134 | 0.7368223839467659 | 0.7178904562595934
+15_user_load_summary.csv,25,avg_qoe_sd,float64,6,0,6,0.0001241059987628,0.0096135258733458,0.004236514219831667,6,0.0001241059987628 | 0.0033083729955151 | 0.0043092594400694 | 0.0073161075809494 | 0.0096135258733458 | 0.0007477134303475
+15_user_load_summary.csv,26,avg_qoe_sem,float64,6,0,6,7.165263179377543e-05,0.0055503717508376,0.002445952625245479,6,7.165263179377543e-05 | 0.0019100900395403 | 0.002487952097732 | 0.0042239566812814 | 0.0055503717508376 | 0.0004316925502878
+15_user_load_summary.csv,27,avg_qoe_ci95,float64,6,0,6,0.0003083212746086,0.0238832496438544,0.010524934146431434,6,0.0003083212746086 | 0.0082191174401422 | 0.0107056578765408 | 0.0181756855995539 | 0.0238832496438544 | 0.0018575730438887
+15_user_load_summary.csv,28,fairness_mean,float64,6,0,6,0.9148749452441016,0.984831808589082,0.9625250250522871,6,0.9148749452441016 | 0.9525414755403852 | 0.9711088016776792 | 0.9698903319688468 | 0.981902787293628 | 0.984831808589082
+15_user_load_summary.csv,29,fairness_sd,float64,6,0,6,2.104156232265207e-05,0.0023454876538219,0.0011615491297258254,6,0.0012179384732049 | 0.0023454876538219 | 2.104156232265207e-05 | 0.0011202161198338 | 0.0015526330170773 | 0.0007119779520944
+15_user_load_summary.csv,30,fairness_sem,float64,6,0,6,1.214835167115346e-05,0.001354167928315,0.0006706207027241591,6,0.0007031771053612 | 0.001354167928315 | 1.214835167115346e-05 | 0.0006467570783366 | 0.0008964130903623 | 0.0004110606622987
+15_user_load_summary.csv,31,fairness_ci95,float64,6,0,6,5.227435724097334e-05,0.0058269845955397,0.002885680883822212,6,0.0030257710843695 | 0.0058269845955397 | 5.227435724097334e-05 | 0.0027829957080825 | 0.003857265527829 | 0.0017687940298716
+15_user_load_summary.csv,32,energy_J_per_step_mean,float64,6,0,6,474199.9144961679,500156.30136342,491532.1383585709,6,474199.9144961679 | 491747.54823081056 | 499999.8659322504 | 483010.5711489274 | 500078.6289798495 | 500156.30136342
+15_user_load_summary.csv,33,energy_J_per_step_sd,float64,6,0,6,5.841321513795712,29005.31038047773,8411.749747793643,6,8839.118451223389 | 12324.734398144632 | 157.45192353255777 | 29005.31038047773 | 138.0420118697423 | 5.841321513795712
+15_user_load_summary.csv,34,energy_J_per_step_sem,float64,6,0,6,3.372488548413107,16746.223756097468,4856.5259812444265,6,5103.267417212812 | 7115.688722459444 | 90.9049104359466 | 16746.223756097468 | 79.69859271247324 | 3.372488548413107
+15_user_load_summary.csv,35,energy_J_per_step_ci95,float64,6,0,6,14.5118182238216,72059.0008224874,20897.631297294763,6,21959.35969626673 | 30618.808572742983 | 391.1638296058782 | 72059.0008224874 | 342.9430444417724 | 14.5118182238216
+15_user_load_summary.csv,36,walltime_ms_per_step_mean,float64,6,0,6,5.773253778616588,21.99564089377721,14.006081253290176,6,5.773253778616588 | 8.972471296787262 | 12.29656974474589 | 15.900340537230171 | 19.09821126858393 | 21.99564089377721
+15_user_load_summary.csv,37,walltime_ms_per_step_sd,float64,6,0,6,0.0135815810636256,0.1694220841402915,0.09487299729174153,6,0.0135815810636256 | 0.136979093730386 | 0.1111699975569205 | 0.1694220841402915 | 0.0902503517421783 | 0.0478348755170473
+15_user_load_summary.csv,38,walltime_ms_per_step_sem,float64,6,0,6,0.0078413294831049,0.0978158858850647,0.054774950525213584,6,0.0078413294831049 | 0.0790849166385893 | 0.0641840280152981 | 0.0978158858850647 | 0.052106064872805 | 0.0276174782564195
+15_user_load_summary.csv,39,walltime_ms_per_step_ci95,float64,6,0,6,0.0337412407658006,0.4209017569634337,0.23569661210999424,6,0.0337412407658006 | 0.3403023962958499 | 0.2761838725498277 | 0.4209017569634337 | 0.2242123971476801 | 0.1188380089373732
+15_user_load_summary.csv,40,mean_episode_return_mean,float64,6,0,6,95.7906591417908,127.75522909250738,109.40430805095896,6,127.75522909250738 | 118.57164810415648 | 110.67387210711674 | 104.64188029348414 | 98.99255956669832 | 95.7906591417908
+15_user_load_summary.csv,41,mean_episode_return_sd,float64,6,0,6,0.0958727704852517,2.792551274529516,1.4350225883169896,6,0.1671760289459938 | 1.406525921741575 | 1.5843062659165297 | 2.56370326828307 | 2.792551274529516 | 0.0958727704852517
+15_user_load_summary.csv,42,mean_episode_return_sem,float64,6,0,6,0.0553521698476153,1.6122802300754484,0.8285106776580072,6,0.0965191253140222 | 0.8120581195396849 | 0.9146996491057192 | 1.480154772065554 | 1.6122802300754484 | 0.0553521698476153
+15_user_load_summary.csv,43,mean_episode_return_ci95,float64,6,0,6,0.2381803868542887,6.937641830014655,3.565081445962406,6,0.4153217962262376 | 3.494286088379264 | 3.9359525901019103 | 6.369105984198078 | 6.937641830014655 | 0.2381803868542887
+15_user_load_summary.csv,44,training_env_steps_mean,float64,6,0,6,200000.0,200000.0,200000.0,1,200000.0
+15_user_load_summary.csv,45,training_env_steps_sd,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,46,training_env_steps_sem,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,47,training_env_steps_ci95,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,48,training_iterations_mean,float64,6,0,6,200.0,200.0,200.0,1,200.0
+15_user_load_summary.csv,49,training_iterations_sd,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,50,training_iterations_sem,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,51,training_iterations_ci95,float64,6,0,6,0.0,0.0,0.0,1,0.0
+15_user_load_summary.csv,52,training_walltime_s_mean,float64,6,0,6,2236.542366345724,6077.777723709743,4176.176909552681,6,2236.542366345724 | 3049.8427143096924 | 3776.95986700058 | 4594.469762404759 | 5321.469023545583 | 6077.777723709743
+15_user_load_summary.csv,53,training_walltime_s_sd,float64,6,0,6,5.347643931626335,50.67062206545841,31.87685935314812,6,5.347643931626335 | 49.41212202432381 | 33.409360374754264 | 22.527851869985295 | 29.8935558527406 | 50.67062206545841
+15_user_load_summary.csv,54,training_walltime_s_sem,float64,6,0,6,3.087463663454733,29.254697289498207,18.40411332845991,6,3.087463663454733 | 28.528101951973987 | 19.288903205817597 | 13.006461341400026 | 17.259052518614897 | 29.254697289498207
+15_user_load_summary.csv,55,training_walltime_s_ci95,float64,6,0,6,13.285356143845718,125.88296243671078,79.192899652363,6,13.285356143845718 | 122.75642269934409 | 83.0001504946331 | 55.96680315204432 | 74.26570298759991 | 125.88296243671078
+16_bs_scalability_seed_metrics.csv,0,run_id,object,6,0,0,,,,6,ours__full__urban__bs4__u80__main__seed42 | ours__full__urban__bs4__u80__main__seed43 | ours__full__urban__bs4__u80__main__seed44 | ours__full__urban__bs8__u160__bs_scale__seed42 | ours__full__urban__bs8__u160__bs_scale__seed43 | ours__full__urban__bs8__u160__bs_scale__seed44
+16_bs_scalability_seed_metrics.csv,1,algorithm,object,6,0,0,,,,1,Ours
+16_bs_scalability_seed_metrics.csv,2,method,object,6,0,0,,,,1,ours
+16_bs_scalability_seed_metrics.csv,3,seed,int64,6,0,6,42.0,44.0,43.0,3,42 | 43 | 44
+16_bs_scalability_seed_metrics.csv,4,experiment,object,6,0,0,,,,2,main | bs_scale
+16_bs_scalability_seed_metrics.csv,5,scenario,object,6,0,0,,,,1,urban
+16_bs_scalability_seed_metrics.csv,6,num_bs,int64,6,0,6,4.0,8.0,6.0,2,4 | 8
+16_bs_scalability_seed_metrics.csv,7,num_users,int64,6,0,6,80.0,160.0,120.0,2,80 | 160
+16_bs_scalability_seed_metrics.csv,8,throughput_Mbps,float64,6,0,6,196.56344275477232,382.771250771976,289.4345660720289,6,196.56344275477232 | 197.41942741060683 | 197.4069564023332 | 382.771250771976 | 382.0346543393935 | 380.41166475309126
+16_bs_scalability_seed_metrics.csv,9,mean_latency_ms,float64,6,0,6,135.96787916439916,164.56886634898885,149.70382678350805,6,159.25766390212044 | 135.96787916439916 | 139.81197429796046 | 153.93860818694296 | 164.56886634898885 | 144.67796880063648
+16_bs_scalability_seed_metrics.csv,10,p95_latency_ms,float64,6,0,6,434.7568907451393,475.9401764730304,455.5873950113769,6,463.20662687131374 | 434.7568907451393 | 443.8673312903707 | 464.1761090046528 | 475.9401764730304 | 451.5772356837542
+16_bs_scalability_seed_metrics.csv,11,deadline_satisfaction_pct,float64,6,0,6,47.70078125,54.0996875,51.198932291666665,6,48.404375 | 54.0996875 | 53.445625 | 50.55328125 | 47.70078125 | 52.98984375
+16_bs_scalability_seed_metrics.csv,12,blocking_pct,float64,6,0,6,0.0,0.7040625,0.21450520833333334,4,0.0 | 0.4353125 | 0.14765625 | 0.7040625
+16_bs_scalability_seed_metrics.csv,13,avg_qoe,float64,6,0,6,0.7493832583136063,0.7716521555084006,0.760642625526801,6,0.7576101484718881 | 0.7716521555084006 | 0.7681938502931134 | 0.7562472534286081 | 0.7493832583136063 | 0.7607690871451895
+16_bs_scalability_seed_metrics.csv,14,fairness,float64,6,0,6,0.967928502025557,0.9707533695113866,0.9690670243347554,6,0.968624391957878 | 0.970293234437276 | 0.9707533695113866 | 0.967928502025557 | 0.9687394397709296 | 0.9680632083055056
+16_bs_scalability_seed_metrics.csv,15,energy_J_per_step,float64,6,0,6,449521.2877705887,996530.5319673036,718187.7581431059,6,500153.903660472 | 499356.5220157214 | 449521.2877705887 | 947878.08289943 | 915686.2205451193 | 996530.5319673036
+16_bs_scalability_seed_metrics.csv,16,walltime_ms_per_step,float64,6,0,6,15.72246503829956,109.58228504657744,62.53349391619364,6,16.059805393218994 | 15.918751180171968 | 15.72246503829956 | 108.69055390357973 | 109.22710293531418 | 109.58228504657744
+16_bs_scalability_seed_metrics.csv,17,mean_episode_return,float64,6,0,6,100.90129362177966,106.24959911370595,103.46268490294919,6,101.68534705900186 | 105.99069470774464 | 106.24959911370595 | 102.48603443692475 | 100.90129362177966 | 103.46314047853828
+16_bs_scalability_seed_metrics.csv,18,training_env_steps,int64,6,0,6,200000.0,200000.0,200000.0,1,200000
+16_bs_scalability_seed_metrics.csv,19,training_iterations,int64,6,0,6,200.0,200.0,200.0,1,200
+16_bs_scalability_seed_metrics.csv,20,training_walltime_s,float64,6,0,6,4568.820488214493,25070.348390579224,14793.401975035667,6,4603.540713310242 | 4568.820488214493 | 4611.048085689545 | 24856.40101838112 | 25050.253154039383 | 25070.348390579224
+16_bs_scalability_seed_metrics.csv,21,algorithm_backend,object,6,0,0,,,,1,rllib_ppo
+16_bs_scalability_seed_metrics.csv,22,run_dir,object,6,0,0,,,,6,/home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs4__u80__main__seed44 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed42 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed43 | /home/umb/Desktop/mappo2/paper_results_v51_final/runs/ours__full__urban__bs8__u160__bs_scale__seed44
+16_bs_scalability_seed_metrics.csv,23,users_per_bs,float64,6,0,6,20.0,20.0,20.0,1,20.0
+17_bs_scalability_summary.csv,0,num_bs,int64,2,0,2,4.0,8.0,6.0,2,4 | 8
+17_bs_scalability_summary.csv,1,num_users,int64,2,0,2,80.0,160.0,120.0,2,80 | 160
+17_bs_scalability_summary.csv,2,users_per_bs,float64,2,0,2,20.0,20.0,20.0,1,20.0
+17_bs_scalability_summary.csv,3,n_seeds,int64,2,0,2,3.0,3.0,3.0,1,3
+17_bs_scalability_summary.csv,4,throughput_Mbps_mean,float64,2,0,2,197.12994218923745,381.7391899548202,289.4345660720288,2,197.12994218923745 | 381.7391899548202
+17_bs_scalability_summary.csv,5,throughput_Mbps_sd,float64,2,0,2,0.4906425261316262,1.2072224099322006,0.8489324680319135,2,0.4906425261316262 | 1.2072224099322006
+17_bs_scalability_summary.csv,6,throughput_Mbps_sem,float64,2,0,2,0.2832725945379724,0.6969901833461049,0.4901313889420386,2,0.2832725945379724 | 0.6969901833461049
+17_bs_scalability_summary.csv,7,throughput_Mbps_ci95,float64,2,0,2,1.218921974296895,2.999148758938289,2.109035366617592,2,1.218921974296895 | 2.999148758938289
+17_bs_scalability_summary.csv,8,mean_latency_ms_mean,float64,2,0,2,145.01250578816004,154.39514777885609,149.70382678350808,2,145.01250578816004 | 154.39514777885609
+17_bs_scalability_summary.csv,9,mean_latency_ms_sd,float64,2,0,2,9.953304607968189,12.485498152567509,11.219401380267849,2,12.485498152567509 | 9.953304607968189
+17_bs_scalability_summary.csv,10,mean_latency_ms_sem,float64,2,0,2,5.746543094736776,7.208505719351427,6.477524407044101,2,7.208505719351427 | 5.746543094736776
+17_bs_scalability_summary.csv,11,mean_latency_ms_ci95,float64,2,0,2,24.727374936652343,31.01820011036919,27.872787523510766,2,31.01820011036919 | 24.727374936652343
+17_bs_scalability_summary.csv,12,p95_latency_ms_mean,float64,2,0,2,447.27694963560793,463.8978403871458,455.5873950113769,2,447.27694963560793 | 463.8978403871458
+17_bs_scalability_summary.csv,13,p95_latency_ms_sd,float64,2,0,2,12.183853907654234,14.528110488200884,13.35598219792756,2,14.528110488200884 | 12.183853907654234
+17_bs_scalability_summary.csv,14,p95_latency_ms_sem,float64,2,0,2,7.034351333351246,8.387808501179407,7.711079917265327,2,8.387808501179407 | 7.034351333351246
+17_bs_scalability_summary.csv,15,p95_latency_ms_ci95,float64,2,0,2,30.26881378741041,36.09273998057499,33.1807768839927,2,36.09273998057499 | 30.26881378741041
+17_bs_scalability_summary.csv,16,deadline_satisfaction_pct_mean,float64,2,0,2,50.41463541666667,51.98322916666667,51.198932291666665,2,51.98322916666667 | 50.41463541666667
+17_bs_scalability_summary.csv,17,deadline_satisfaction_pct_sd,float64,2,0,2,2.647255660594965,3.1165842356941167,2.8819199481445406,2,3.1165842356941167 | 2.647255660594965
+17_bs_scalability_summary.csv,18,deadline_satisfaction_pct_sem,float64,2,0,2,1.5283937682582636,1.7993607474301423,1.663877257844203,2,1.7993607474301423 | 1.5283937682582636
+17_bs_scalability_summary.csv,19,deadline_satisfaction_pct_ci95,float64,2,0,2,6.576678384815308,7.742649296191903,7.1596638405036055,2,7.742649296191903 | 6.576678384815308
+17_bs_scalability_summary.csv,20,blocking_pct_mean,float64,2,0,2,0.0,0.4290104166666666,0.2145052083333333,2,0.0 | 0.4290104166666666
+17_bs_scalability_summary.csv,21,blocking_pct_sd,float64,2,0,2,0.0,0.2782566548180309,0.13912832740901546,2,0.0 | 0.2782566548180309
+17_bs_scalability_summary.csv,22,blocking_pct_sem,float64,2,0,2,0.0,0.1606515545629949,0.08032577728149745,2,0.0 | 0.1606515545629949
+17_bs_scalability_summary.csv,23,blocking_pct_ci95,float64,2,0,2,0.0,0.6912836392845673,0.34564181964228363,2,0.0 | 0.6912836392845673
+17_bs_scalability_summary.csv,24,avg_qoe_mean,float64,2,0,2,0.755466532962468,0.765818718091134,0.7606426255268011,2,0.765818718091134 | 0.755466532962468
+17_bs_scalability_summary.csv,25,avg_qoe_sd,float64,2,0,2,0.0057329240253308,0.0073161075809494,0.0065245158031401,2,0.0073161075809494 | 0.0057329240253308
+17_bs_scalability_summary.csv,26,avg_qoe_sem,float64,2,0,2,0.0033099052292684,0.0042239566812814,0.0037669309552749,2,0.0042239566812814 | 0.0033099052292684
+17_bs_scalability_summary.csv,27,avg_qoe_ci95,float64,2,0,2,0.014242522201542,0.0181756855995539,0.01620910390054795,2,0.0181756855995539 | 0.014242522201542
+17_bs_scalability_summary.csv,28,fairness_mean,float64,2,0,2,0.968243716700664,0.9698903319688468,0.9690670243347554,2,0.9698903319688468 | 0.968243716700664
+17_bs_scalability_summary.csv,29,fairness_sd,float64,2,0,2,0.0004345600847517,0.0011202161198338,0.00077738810229275,2,0.0011202161198338 | 0.0004345600847517
+17_bs_scalability_summary.csv,30,fairness_sem,float64,2,0,2,0.0002508933819105,0.0006467570783366,0.00044882523012355,2,0.0006467570783366 | 0.0002508933819105
+17_bs_scalability_summary.csv,31,fairness_ci95,float64,2,0,2,0.0010795942223609,0.0027829957080825,0.0019312949652217,2,0.0027829957080825 | 0.0010795942223609
+17_bs_scalability_summary.csv,32,energy_J_per_step_mean,float64,2,0,2,483010.5711489274,953364.9451372842,718187.7581431058,2,483010.5711489274 | 953364.9451372842
+17_bs_scalability_summary.csv,33,energy_J_per_step_sd,float64,2,0,2,29005.31038047773,40700.49035631727,34852.9003683975,2,29005.31038047773 | 40700.49035631727
+17_bs_scalability_summary.csv,34,energy_J_per_step_sem,float64,2,0,2,16746.223756097468,23498.439063369544,20122.331409733506,2,16746.223756097468 | 23498.439063369544
+17_bs_scalability_summary.csv,35,energy_J_per_step_ci95,float64,2,0,2,72059.0008224874,101113.78328967917,86586.39205608328,2,72059.0008224874 | 101113.78328967917
+17_bs_scalability_summary.csv,36,walltime_ms_per_step_mean,float64,2,0,2,15.900340537230171,109.16664729515712,62.53349391619365,2,15.900340537230171 | 109.16664729515712
+17_bs_scalability_summary.csv,37,walltime_ms_per_step_sd,float64,2,0,2,0.1694220841402915,0.4489290268718456,0.30917555550606857,2,0.1694220841402915 | 0.4489290268718456
+17_bs_scalability_summary.csv,38,walltime_ms_per_step_sem,float64,2,0,2,0.0978158858850647,0.2591892945114968,0.17850259019828074,2,0.0978158858850647 | 0.2591892945114968
+17_bs_scalability_summary.csv,39,walltime_ms_per_step_ci95,float64,2,0,2,0.4209017569634337,1.115291534282971,0.7680966456232023,2,0.4209017569634337 | 1.115291534282971
+17_bs_scalability_summary.csv,40,mean_episode_return_mean,float64,2,0,2,102.28348951241423,104.64188029348414,103.46268490294918,2,104.64188029348414 | 102.28348951241423
+17_bs_scalability_summary.csv,41,mean_episode_return_sd,float64,2,0,2,1.292877861286493,2.56370326828307,1.9282905647847814,2,2.56370326828307 | 1.292877861286493
+17_bs_scalability_summary.csv,42,mean_episode_return_sem,float64,2,0,2,0.7464433812430644,1.480154772065554,1.1132990766543092,2,1.480154772065554 | 0.7464433812430644
+17_bs_scalability_summary.csv,43,mean_episode_return_ci95,float64,2,0,2,3.2119458694889063,6.369105984198078,4.790525926843492,2,6.369105984198078 | 3.2119458694889063
+17_bs_scalability_summary.csv,44,training_env_steps_mean,float64,2,0,2,200000.0,200000.0,200000.0,1,200000.0
+17_bs_scalability_summary.csv,45,training_env_steps_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+17_bs_scalability_summary.csv,46,training_env_steps_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+17_bs_scalability_summary.csv,47,training_env_steps_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+17_bs_scalability_summary.csv,48,training_iterations_mean,float64,2,0,2,200.0,200.0,200.0,1,200.0
+17_bs_scalability_summary.csv,49,training_iterations_sd,float64,2,0,2,0.0,0.0,0.0,1,0.0
+17_bs_scalability_summary.csv,50,training_iterations_sem,float64,2,0,2,0.0,0.0,0.0,1,0.0
+17_bs_scalability_summary.csv,51,training_iterations_ci95,float64,2,0,2,0.0,0.0,0.0,1,0.0
+17_bs_scalability_summary.csv,52,training_walltime_s_mean,float64,2,0,2,4594.469762404759,24992.334187666576,14793.401975035667,2,4594.469762404759 | 24992.334187666576
+17_bs_scalability_summary.csv,53,training_walltime_s_sd,float64,2,0,2,22.527851869985295,118.149585343705,70.33871860684515,2,22.527851869985295 | 118.149585343705
+17_bs_scalability_summary.csv,54,training_walltime_s_sem,float64,2,0,2,13.006461341400026,68.21369490283075,40.61007812211539,2,13.006461341400026 | 68.21369490283075
+17_bs_scalability_summary.csv,55,training_walltime_s_ci95,float64,2,0,2,55.96680315204432,293.52352916688073,174.74516615946254,2,55.96680315204432 | 293.52352916688073
+18_qoe_per_user_samples.csv,0,algorithm,object,960,0,0,,,,4,Cent-PPO
+18_qoe_per_user_samples.csv,1,method,object,960,0,0,,,,4,cent_ppo
+18_qoe_per_user_samples.csv,2,seed,int64,960,0,960,42.0,44.0,43.0,3,42
+18_qoe_per_user_samples.csv,3,user_id,int64,960,0,960,0.0,79.0,39.5,80,0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+18_qoe_per_user_samples.csv,4,mean_qoe,float64,960,0,960,0.6451552762474504,0.8375572330466545,0.7507851488339214,>200,0.7619834544731522 | 0.7451181344460738 | 0.7653819512252896 | 0.7402972751251498 | 0.738942106593645 | 0.717006603708105 | 0.747879325064395 | 0.7789615865483644
+19_training_curve_seed.csv,0,algorithm,object,2400,0,0,,,,4,Cent-PPO
+19_training_curve_seed.csv,1,seed,int64,2400,0,2400,42.0,44.0,43.0,3,42
+19_training_curve_seed.csv,2,training_episode,float64,0,2400,0,,,,0,
+19_training_curve_seed.csv,3,env_steps,int64,2400,0,2400,1000.0,200000.0,100500.0,200,1000 | 2000 | 3000 | 4000 | 5000 | 6000 | 7000 | 8000
+19_training_curve_seed.csv,4,return_value,float64,2400,0,2400,6.735767005309755,425.8846037548449,290.04319276765085,>200,6.735767005309755 | 7.692989744586404 | 9.282551142362022 | 9.939991325283223 | 10.488972356008842 | 11.209150851162638 | 12.100105632156971 | 13.061323543598965
+20_training_curve_cross_seed.csv,0,algorithm,object,800,0,0,,,,4,Cent-PPO
+20_training_curve_cross_seed.csv,1,env_steps,float64,800,0,800,1000.0,200000.0,100500.0,200,1000.0 | 2000.0 | 3000.0 | 4000.0 | 5000.0 | 6000.0 | 7000.0 | 8000.0
+20_training_curve_cross_seed.csv,2,n_seeds,int64,800,0,800,3.0,3.0,3.0,1,3
+20_training_curve_cross_seed.csv,3,return_mean,float64,800,0,800,7.2320030522012,419.45294043732537,290.04319276765085,>200,7.2320030522012 | 7.815619666554394 | 8.937634680032424 | 9.786435484149312 | 10.57947323299335 | 11.466045593282953 | 12.330756218517806 | 13.229693568585544
+20_training_curve_cross_seed.csv,4,return_sd,float64,800,0,800,0.0597681907579427,12.600745381794008,5.219016592974827,>200,0.5502629912331013 | 0.3738947542376992 | 0.4692295451688277 | 0.2941668820762553 | 0.2291743617425608 | 0.2226869513678488 | 0.2202633688462547 | 0.1633237698549821
+21_figure_manifest.csv,0,figure,object,18,0,0,,,,18,01_main_throughput | 02_main_latency_mean_p95 | 03_deadline_overall_light_heavy | 04_main_qoe | 05_main_fairness | 06_main_energy | 07_qoe_cdf | 08_deadline_by_service_class
+21_figure_manifest.csv,1,source_table,object,18,0,0,,,,9,03_main_cross_seed_summary.csv | 06_deadline_overall_light_heavy.csv | 18_qoe_per_user_samples.csv | 09_service_class_cross_seed_summary.csv | 11_neighbor_ablation_summary.csv | 13_mobility_summary.csv | 15_user_load_summary.csv | 17_bs_scalability_summary.csv
+21_figure_manifest.csv,2,interpretation,object,18,0,0,,,,18,"Main four-method throughput, mean ± sample SD. | Main mean and P95 latency. | Overall, light, and heavy deadline satisfaction reconstructed from raw user steps. | Main average QoE. | Main Jain fairness. | Modeled comparative energy per step. | Per-user mean QoE CDF. | Safety vs infotainment deadline satisfaction."

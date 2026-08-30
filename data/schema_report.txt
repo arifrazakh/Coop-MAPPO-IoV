@@ -1,0 +1,55 @@
+GRAPH DATA AUDIT REPORT
+=======================
+Processed tables directory: /home/umb/Desktop/mappo2/paper_analysis_v51/tables
+Processed CSV tables: 22
+Total processed rows: 4420
+Raw run directories audited: 39
+
+GRAPH READINESS
+---------------
+01_mean_throughput: READY
+02_mean_p95_latency: READY
+03_deadline_light_heavy: READY
+04_qoe_cdf: READY
+05_infrastructure_energy: READY
+06_training_convergence_seed: NOT READY
+  - 19_training_curve_seed.csv / return: missing_required_column
+    closest: return_value | training_episode | env_steps | algorithm | seed
+06_training_convergence_mean: READY
+07_fairness_vs_load: NOT READY
+  - 15_user_load_summary.csv / algorithm: missing_required_column
+    closest: training_iterations_mean | training_iterations_sd | walltime_ms_per_step_sd | training_iterations_ci95 | avg_qoe_sd
+radar_performance_profile: READY
+
+RAW VS PROCESSED VALIDATION
+---------------------------
+Status: completed
+Raw throughput highest: MA-A2C
+Raw throughput lowest: MAPPO
+Processed throughput highest: MA-A2C
+Processed throughput lowest: MAPPO
+Ours highest in raw data: False
+MA-A2C lowest in raw data: False
+Throughput mismatch rows: 0
+All-metric mismatch rows: 0
+Detailed files: throughput_validation.csv and raw_vs_processed_main_metrics.csv
+
+COPIED RAW SUMMARY TABLES
+-------------------------
+- experiment_manifest.csv
+- run_summary.csv
+- table_bs_scalability.csv
+- table_main_comparison.csv
+- table_mappo_seed.csv
+- table_mobility_breakdown.csv
+- table_neighbor_ablation.csv
+- table_service_class_cross_seed_summary.csv
+- table_service_class_seed_metrics.csv
+- table_task_type_cross_seed_summary.csv
+- table_task_type_seed_metrics.csv
+- table_user_load_scalability.csv
+
+FILES TO SEND BACK
+------------------
+Send graph_data_analysis.zip. It contains schemas, readiness matches,
+numeric ranges, method coverage, samples, and safely sized table copies.
