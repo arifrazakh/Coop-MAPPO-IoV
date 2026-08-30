@@ -1,0 +1,19 @@
+figure,source_table,interpretation
+01_main_throughput,03_main_cross_seed_summary.csv,"Main four-method throughput, mean ± sample SD."
+02_main_latency_mean_p95,03_main_cross_seed_summary.csv,Main mean and P95 latency.
+03_deadline_overall_light_heavy,06_deadline_overall_light_heavy.csv,"Overall, light, and heavy deadline satisfaction reconstructed from raw user steps."
+04_main_qoe,03_main_cross_seed_summary.csv,Main average QoE.
+05_main_fairness,03_main_cross_seed_summary.csv,Main Jain fairness.
+06_main_energy,03_main_cross_seed_summary.csv,Modeled comparative energy per step.
+07_qoe_cdf,18_qoe_per_user_samples.csv,Per-user mean QoE CDF.
+08_deadline_by_service_class,09_service_class_cross_seed_summary.csv,Safety vs infotainment deadline satisfaction.
+09_neighbor_ablation,11_neighbor_ablation_summary.csv,Ours full vs no-neighbor.
+10_mobility_deadline,13_mobility_summary.csv,Ours urban/highway/mixed deadline.
+11_mobility_latency,13_mobility_summary.csv,Ours urban/highway/mixed mean/P95 latency.
+12_user_load_deadline,15_user_load_summary.csv,Ours deadline vs number of users.
+13_user_load_latency,15_user_load_summary.csv,Ours latency vs number of users.
+14_user_load_throughput,15_user_load_summary.csv,Ours throughput vs number of users.
+15_bs_scalability_deadline,17_bs_scalability_summary.csv,Ours 4-BS/80-user vs 8-BS/160-user deadline.
+16_bs_scalability_runtime,17_bs_scalability_summary.csv,Environment computational cost under BS scaling.
+17_training_convergence,19_training_curve_seed.csv;20_training_curve_cross_seed.csv,Training curve source: rllib_train_iterations_fallback.
+18_performance_complexity_tradeoff,03_main_cross_seed_summary.csv,Deadline-performance vs environment-step computational cost.

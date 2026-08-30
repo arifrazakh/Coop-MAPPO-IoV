@@ -1,0 +1,13 @@
+run_id,algorithm,method,seed,num_bs,num_users,n_eval_episodes,expected_user_rows,observed_user_rows,row_count_match,eval_seed_count,first_eval_seed,last_eval_seed,raw_overall_deadline_pct,run_summary_deadline_pct,deadline_difference_pp,deadline_match
+cent_ppo__full__urban__bs4__u80__main__seed42,Cent-PPO,cent_ppo,42,4,80,20,320000,320000,True,20,900000,900019,51.2953125,51.2953125,0.0,True
+cent_ppo__full__urban__bs4__u80__main__seed43,Cent-PPO,cent_ppo,43,4,80,20,320000,320000,True,20,900000,900019,54.0828125,54.0828125,0.0,True
+cent_ppo__full__urban__bs4__u80__main__seed44,Cent-PPO,cent_ppo,44,4,80,20,320000,320000,True,20,900000,900019,49.63375,49.63375,0.0,True
+mappo__full__urban__bs4__u80__main__seed42,MAPPO,mappo,42,4,80,20,320000,320000,True,20,900000,900019,47.59875,47.59875,0.0,True
+mappo__full__urban__bs4__u80__main__seed43,MAPPO,mappo,43,4,80,20,320000,320000,True,20,900000,900019,53.9903125,53.9903125,0.0,True
+mappo__full__urban__bs4__u80__main__seed44,MAPPO,mappo,44,4,80,20,320000,320000,True,20,900000,900019,53.11625,53.11625,0.0,True
+ma_a2c__full__urban__bs4__u80__main__seed42,MA-A2C,ma_a2c,42,4,80,20,320000,320000,True,20,900000,900019,24.991875,24.991875,0.0,True
+ma_a2c__full__urban__bs4__u80__main__seed43,MA-A2C,ma_a2c,43,4,80,20,320000,320000,True,20,900000,900019,25.1503125,25.1503125,0.0,True
+ma_a2c__full__urban__bs4__u80__main__seed44,MA-A2C,ma_a2c,44,4,80,20,320000,320000,True,20,900000,900019,23.8446875,23.8446875,0.0,True
+ours__full__urban__bs4__u80__main__seed42,Ours,ours,42,4,80,20,320000,320000,True,20,900000,900019,48.404375,48.404375,0.0,True
+ours__full__urban__bs4__u80__main__seed43,Ours,ours,43,4,80,20,320000,320000,True,20,900000,900019,54.0996875,54.0996875,0.0,True
+ours__full__urban__bs4__u80__main__seed44,Ours,ours,44,4,80,20,320000,320000,True,20,900000,900019,53.445625,53.445625,0.0,True
